@@ -19,7 +19,7 @@ module.exports = function (grunt) {
   // Configurable paths
   var config = {
     app: 'app',
-    dist: 'dist'
+    dist: '../static-projects/officer-involved'
   };
 
   // Define the configuration for all the tasks
