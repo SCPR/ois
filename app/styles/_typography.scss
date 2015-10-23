@@ -1,25 +1,71 @@
 // Type Styles for the Sequential Narrative
 .typography--sequential {
-  .title {}
-  .subtitle {}
+  .title {
+    font-family: $font-sans;
+    font-size: em(68);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .subtitle {
+    font-size: em(24);
+    font-weight: 300;
+  }
 
-  .heading {}
-  .heading--section {}
-  .heading--categry {}
-  .heading--article-title {}
+  .heading {
+    font-family: $font-sans;
+    text-transform: uppercase;
+  }
+  .heading--section {
+    font-size: em(26);
+    font-weight: 700;
+    line-height: em(34, 26);
+  }
+  .heading--category {
+    font-size: em(16);
+    font-weight: 400;
+    line-height: em(20, 16);
+  }
 
-  .copy {}
-  .copy--big {}
-  .copy--med {}
-  .copy--small {}
-  .copy--emphasis {}
-  .copy--instruction {}
+  .copy {
+    font-weight: 300;
+  }
+  .copy--big {
+    font-size: em(36);
+    line-height: em(52, 36);
+  }
+  .copy--med {
+    font-size: em(30);
+    line-height: em(48, 30);
+  }
+  .copy--small {
+    font-size: em(18);
+    line-height: em(32, 18);
+  }
+  .copy--emphasis {
+    color: $blue-bright;
+  }
+  .copy--instruction {
+    color: $blue-muted;
+    font-size: em(16);
+  }
 
   .stat--number {}
   .stat--label {}
 
-  .link {}
-  .link--action {}
-  .link--suble {}
-  .link--document {}
+  .link {
+    font-family: $font-sans;
+  }
+  .link--action {
+    font-family: $font-sans-alt;
+  }
+  .link--subtle {
+    color: $blue-muted;
+    font-size: em(18);
+    font-weight: 600;
+  }
+  .link--document {
+    color: $blue-bright;
+    font-size: em(18);
+    font-weight: 300;
+  }
 }
