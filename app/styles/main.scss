@@ -2,6 +2,11 @@
 @import "fullpage.js/jquery.fullPage.scss";
 // endbower
 
+// Variables + Mixins
+@import "variables";
+@import "mixins";
+
+// Project Styles
 @import "reset";
 @import "base";
 @import "typography";
