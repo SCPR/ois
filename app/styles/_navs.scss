@@ -1,0 +1,26 @@
+.nav-controls {
+  position: absolute;
+  top: 0;
+  bottom:0;
+  left: 50%;
+  margin-left: -22px;
+  z-index: 100;
+}
+  .nav-control {
+    background: rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    width: 44px;
+    height: 44px;
+
+    &.next-slide {
+      bottom: 26px;
+    }
+
+    &.prev-slide {
+      top: 26px;
+    }
+  }

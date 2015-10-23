@@ -1,0 +1,49 @@
+.cover {
+  position: fixed; 
+  top: -50%; 
+  left: -50%; 
+  width: 200%; 
+  height: 200%;
+}
+.slide-bg {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%;
+  overflow-x: hidden;
+  opacity: 0;
+  transform: scale(1);
+  -webkit-transition: opacity 0.5s linear, transform 1.2s ease-in-out;
+  -moz-transition: opacity 0.5s linear, transform 1.2s ease-in-out;
+
+  &.active {
+    opacity: 1;
+    -webkit-transition: opacity 0.5s linear, transform 1.2s ease-in-out;
+    -moz-transition: opacity 0.5s linear, transform 1.2s ease-in-out;
+  }
+  &.zoom {
+    transform: scale(1.5) translateX(200px);
+    -webkit-transition: opacity 0.5s linear, transform 1.2s ease-in-out;
+    -moz-transition: opacity 0.5s linear, transform 1.2s ease-in-out;
+    -webkit-transition-delay: 0.2s; /* Safari */
+    transition-delay: 0.2s;
+  }
+}
+
+.section {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s linear;
+  -moz-transition: opacity 0.3s linear;
+
+  &.active {
+    opacity: 1;
+    -webkit-transition: opacity 1.5s linear;
+    -moz-transition: opacity 1.5s linear;
+    -webkit-transition-delay: 0.8s; /* Safari */
+    transition-delay: 0.8s;
+  }
+}
