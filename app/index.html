@@ -18,10 +18,40 @@
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
+    <!-- Load web fonts -->
+    <script src="https://use.typekit.net/fok5vpj.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
   </head>
   <body>
 
+  <div class="nav-controls">
+    <button class="nav-control next-slide">Next</button>
+    <button class="nav-control prev-slide">Prev</button>
+  </div>
+  <div class="cover">
+    <img src="images/bg-slide-0.jpg" class="slide-bg active" id="bg-0">
+  </div>
+  <div id="fullpage">
+    <section id="slide-0" class="section active">
+      <div class="bound">
+        <h1>OFFICER INVOLVED</h1>
+        <h4>Mauris euismod libero eget ex tincidunt, varius elementum libero tincidunt.</h4>
+        <p><a href="#">View Credits</a></p>
+      </div>
+    </section>
+    <section id="slide-1" class="section">
+      <div class="bound">
+        <p>Between Jan. 1, 2010 and Dec. 31, 2014, the Justice System Integrity Division of the Los Angeles County District Attorney's Office responded to 458 shootings involving on-duty and off-duty police officers and sheriff's deputies.</p>
+      </div>
+    </section>
+    <section id="slide-2" class="section">
+      <div class="bound">
+        <p>For about 81 percent of those shootings over the five-year period, KPCC has reviewed DA letters sent to law enforcement agencies that lay out why the agency has declined to prosecute officers.</p>
+        <img data-src="images/total-ois.png" alt="Total Number of OIS Incidents">
+      </div>
+    </section>
+  </div>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
