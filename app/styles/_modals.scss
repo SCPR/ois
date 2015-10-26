@@ -37,6 +37,19 @@
   }
 }
 
+.modal__heading {
+  font-weight: 400;
+}
+.modal__heading--small {
+  color: $blue-light;
+  font-size: em(20);
+}
+.modal__copy {
+  font-family: $font-sans;
+  font-size: em(18);
+  line-height: em(32, 18);
+}
+
 .modal__close {
   opacity: 0.5;
   position: absolute;
