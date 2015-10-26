@@ -26,19 +26,37 @@
   <body class="theme--dark typography--sequential">
 
   <div class="nav-controls">
-    <button class="nav-control next-slide">Next</button>
-    <button class="nav-control prev-slide">Prev</button>
+    <button class="nav-control next-slide">
+      <img src="images/ctrl_arrow-down.svg" alt="Next">
+    </button>
+    <button class="nav-control prev-slide">
+      <img src="images/ctrl_arrow-up.svg" alt="Prev">
+    </button>
   </div>
   <div class="cover">
-    <img src="images/bg-slide-0.jpg" class="slide-bg active" id="bg-0">
+    <img src="images/bg_title-slide.jpg" class="slide-bg active" id="bg-0">
   </div>
   <div id="fullpage">
     <section id="slide-0" class="section active">
       <div class="bound align--center">
-        <img src="images/logo.svg" alt="89.3 KPCC">
+        <img src="images/logo_kpcc-white.svg" alt="89.3 KPCC">
         <h1 class="title">Officer Involved</h1>
         <p class="subtitle">Mauris euismod libero eget ex tincidunt, varius elementum libero tincidunt.</p>
-        <p><a href="#credits" class="link link--subtle">View Credits</a></p>
+        <p><a href="#credits" class="link link--subtle" data-toggle="modal">Credits</a></p>
+        <aside class="modal modal--slide-up align--left" id="credits">
+          <h4>Credits</h4>
+          <p>Reporting: Annie Gilbertson, Rina Palta and Frank Stolze</p>
+          <p>Data and Research: Aaron Mendelson and Chris Keller</p>
+          <p>Design: Sean Dillingham, Katie Briggs, Vijay Singh</p>
+          <p>Development: Sean Dillingham and Chris Keller</p>
+          <p>Photos: Maya Sugarman and Susanica Tam</p>
+          <p>Engagement and Promotion: Kristen Lepore and Ashley Alvarado</p>
+          <p>Contributors: Will Craft, Aaron Bloom, Taylor Haney, Christian Brown and Quinn Owen</p>
+          <p>Editor: Evelyn Larrubia</p>
+          <a href="#credits" data-toggle="modal">
+            <img src="images/ctrl_close-large.svg" class="modal__close" alt="Close">
+          </a>
+        </aside>
       </div>
     </section>
 
@@ -52,7 +70,6 @@
       <div class="bound">
         <h3 class="heading heading--section">Armed vs. Unarmed</h3>
         <p class="copy copy--med">For about <span class="copy--emphasis">81 percent</span> of those shootings over the five-year period, KPCC has reviewed DA letters sent to law enforcement agencies that lay out why the agency has declined to prosecute officers.</p>
-        <img data-src="images/total-ois.png" alt="Total Number of OIS Incidents">
       </div>
     </section>
   </div>

@@ -1,0 +1,48 @@
+.modal {
+  background: $blue-midnight;
+  padding:60px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  max-width: 630px;
+  min-width: 320px;
+  height: auto;
+  z-index: 2000;
+  visibility: hidden; // hide by default
+  backface-visibility: hidden; // hide by default
+  transform: translateX(-50%) translateY(-50%);
+
+  &.active {
+    visibility: visible; // make visible when toggled on
+  }
+}
+
+// Modal effect: Slide from the bottom
+.modal--slide-up {
+  -webkit-transform: translateX(-50%) translateY(-20%);
+  -moz-transform: translateX(-50%) translateY(-20%);
+  -ms-transform: translateX(-50%) translateY(-20%);
+  transform: translateX(-50%) translateY(-20%);
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  &.active {
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 1;
+  }
+}
+
+.modal__close {
+  opacity: 0.5;
+  position: absolute;
+  right: 50px;
+  top: 50px;
+  &:hover {
+    opacity: 1;
+  }
+}
