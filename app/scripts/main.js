@@ -12,6 +12,7 @@ $(document).ready(function() {
       onLeave: function(index, newIndex, direction){
         if (newIndex === 2 && direction === 'down'){
           $('#bg-0').addClass('zoom');
+          $('.header__branding').removeClass('hidden');
         }
         else if (newIndex === 3 && direction === 'down'){
           $('#bg-0').removeClass('active');
@@ -21,6 +22,7 @@ $(document).ready(function() {
         }
         else if(newIndex === 1 && direction === 'up'){
           $('#bg-0').removeClass('zoom');
+          $('.header__branding').addClass('hidden');
         }
       }
     });

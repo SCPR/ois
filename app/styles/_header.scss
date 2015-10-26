@@ -1,0 +1,50 @@
+.header {
+  padding: 18px 32px;
+  position: absolute;
+  z-index: 300;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+  .header__branding {
+    opacity: 1;
+    -webkit-transition: opacity 0.8s linear;
+    -moz-transition: opacity 0.8s linear;
+    -webkit-transition-delay: 0.3s; /* Safari */
+    transition-delay: 0.3s;
+    &.hidden {
+      opacity: 0;
+      -webkit-transition: opacity 0.8s linear;
+      -moz-transition: opacity 0.8s linear;
+    }
+  }
+    .header__pipe {
+      background: $white;
+      display: inline-block;
+      height: 20px;
+      margin: 0 8px;
+      width: 1px;
+    }
+    .header__series-title {
+      display: inline-block;
+      font-family: $font-sans;
+      font-weight: 400;
+      font-size: em(20);
+      vertical-align: bottom;
+    }
+  .header__menu {
+    position: absolute;
+    right: 32px;
+    top: 18px;
+  }
+    .menu__link {
+      @include button-reset();
+      color: $white;
+      font-family: $font-sans;
+      font-size: em(18);
+      font-weight: 600;
+      text-transform: uppercase;
+      img, span {
+        vertical-align: middle;
+      }
+    }
