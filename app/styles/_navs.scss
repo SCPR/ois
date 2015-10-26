@@ -7,14 +7,18 @@
   z-index: 100;
 }
   .nav-control {
-    background: rgba($black,0.6);
-    border: 1px solid rgba($white,0.3);
+    background: transparent;
+    border: 0;
     color: #fff;
     cursor: pointer;
+    opacity: 0.5;
     outline: none;
     position: absolute;
     width: 44px;
     height: 44px;
+    &:hover {
+      opacity: 1;
+    }
 
     &.next-slide {
       bottom: 26px;
