@@ -1,0 +1,7 @@
+// When you want a <button> but you don't want a "button."
+@mixin button-reset {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+}

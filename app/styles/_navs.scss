@@ -7,12 +7,9 @@
   z-index: 100;
 }
   .nav-control {
-    background: transparent;
-    border: 0;
-    color: #fff;
-    cursor: pointer;
+    @include button-reset();
+    color: $white;
     opacity: 0.5;
-    outline: none;
     position: absolute;
     width: 44px;
     height: 44px;
