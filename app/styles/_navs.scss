@@ -1,4 +1,4 @@
-.nav-controls {
+.pager--slides {
   position: absolute;
   top: 0;
   bottom:0;
@@ -18,7 +18,7 @@
     -moz-transition: opacity 0.8s linear;
   }
 }
-  .nav-control {
+  .pager--slides__btn {
     @include button-reset();
     color: $white;
     opacity: 0.5;
