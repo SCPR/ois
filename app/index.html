@@ -25,7 +25,7 @@
   </head>
   <body class="theme--dark typography--sequential">
 
-  <div class="nav-controls">
+  <div class="nav-controls hidden">
     <button class="nav-control next-slide">
       <img src="images/ctrl_arrow-down.svg" alt="Next">
     </button>
@@ -41,7 +41,7 @@
     </div>
     <div class="header__menu">
       <button class="menu__link">
-        <img src="images/icon_plus.svg">
+        <img src="images/icon_plus.svg" class="icon icon--left">
         <span>More</span>
       </button>
     </div>
@@ -56,6 +56,11 @@
         <h1 class="title">Officer Involved</h1>
         <p class="subtitle">Mauris euismod libero eget ex tincidunt, varius elementum libero tincidunt.</p>
         <p><a href="#credits" class="link link--subtle" data-toggle="modal">Credits</a></p>
+        <button class="button button--begin next-slide">
+          <img src="images/ctrl_arrow-down.svg" class="icon icon--left" width="20" alt="Begin">
+          <span>Begin</span>
+        </button>
+        <!-- Modal: Credits -->
         <aside class="modal modal--slide-up align--left" id="credits">
           <h4 class="modal__heading modal__heading--small">Credits</h4>
           <p class="modal__copy"><b>Reporting:</b> Annie Gilbertson, Rina Palta and Frank Stolze</p>

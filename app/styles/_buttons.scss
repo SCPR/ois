@@ -1,5 +1,16 @@
-.button {}
+.button {
+  background: rgba($black, 0.4);
+  border: 1px solid rgba($white, 0.4);
+  border-radius: 4px;
+  color: $white;
+  font-family: $font-sans;
+}
 
-.button--begin {}
+.button--begin {
+  font-size: em(24);
+  font-weight: 600;
+  padding: 8px 18px;
+  text-transform: uppercase;
+}
 .button--facebook {}
 .button--twitter {}

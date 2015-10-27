@@ -3,7 +3,7 @@
 $(document).ready(function() {
     // Initialize fullpage.js
     $('#fullpage').fullpage({
-      scrollingSpeed: 1400,
+      scrollingSpeed: 1600,
       easing: 'easeInQuart',
       css3: true,
       paddingTop: '70px',
@@ -13,6 +13,7 @@ $(document).ready(function() {
         if (newIndex === 2 && direction === 'down'){
           $('#bg-0').addClass('zoom');
           $('.header__branding').removeClass('hidden');
+          $('.nav-controls').removeClass('hidden');
         }
         else if (newIndex === 3 && direction === 'down'){
           $('#bg-0').removeClass('active');
@@ -23,6 +24,7 @@ $(document).ready(function() {
         else if(newIndex === 1 && direction === 'up'){
           $('#bg-0').removeClass('zoom');
           $('.header__branding').addClass('hidden');
+          $('.nav-controls').addClass('hidden');
         }
       }
     });
