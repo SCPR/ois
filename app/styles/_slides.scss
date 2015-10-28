@@ -5,7 +5,7 @@
   width: 200%; 
   height: 200%;
 }
-.slide-bg {
+.slide__bg {
   position: absolute; 
   top: 0; 
   left: 0; 
@@ -33,6 +33,22 @@
     transition-delay: 0.2s;
   }
 }
+.slide__sharing {
+  position: absolute;
+  right: 32px;
+  bottom: 32px;
+}
+  .sharing__label {
+    color: $blue-muted;
+    display: inline-block;
+    font-family: $font-sans-alt;
+    font-size: em(14);
+    vertical-align: middle;
+  }
+  .sharing__button {
+    margin-left: 6px;
+    vertical-align: middle;
+  }
 
 .section {
   opacity: 0;

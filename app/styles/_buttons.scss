@@ -1,9 +1,13 @@
 .button {
   background: rgba($black, 0.4);
-  border: 1px solid rgba($white, 0.4);
+  border: 1px solid rgba($white, 0.3);
   border-radius: 4px;
   color: $white;
   font-family: $font-sans;
+  &:hover {
+    background: rgba($black, 0.6);
+    border: 1px solid rgba($white, 0.5);
+  }
 }
 
 .button--begin {
@@ -12,5 +16,25 @@
   padding: 8px 18px;
   text-transform: uppercase;
 }
-.button--facebook {}
-.button--twitter {}
+
+.button--facebook, .button--twitter {
+  display: inline-block;
+  position: relative;
+  width: 52px;
+  height: 52px;
+  img {
+    position: absolute;
+  }
+}
+  .button--facebook {
+    img {
+      left: 17px;
+      top: 11px;
+    }
+  }
+  .button--twitter {
+    img {
+      left: 10px;
+      top: 13px;
+    }
+  }
