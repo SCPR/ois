@@ -2,3 +2,15 @@
   margin: 0 auto;
   max-width: em(1040px);
 }
+  .bound--singlecol-full {
+    max-width: em(1440px);
+  }
+  .bound--singlecol-wide {
+    max-width: em(1040px);
+  }
+  .bound--singlecol-med {
+    max-width: em(800px);
+  }
+  .bound--singlecol-small {
+    max-width: em(660px);
+  }
