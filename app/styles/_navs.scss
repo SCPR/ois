@@ -1,3 +1,4 @@
+// Pager for advancing slides in sequential stories
 .pager--slides {
   position: absolute;
   top: 0;
@@ -35,5 +36,66 @@
 
     &.prev-slide {
       top: 26px;
+    }
+  }
+
+// Off-canvas nav drawers
+.drawer {
+  padding: 30px;
+  position: absolute;
+}
+
+.drawer--light {
+  background: $white;
+  color: $charcoal;
+}
+.drawer--dark {
+  background: $blue-midnight;
+  color: $white;
+}
+
+.drawer--top {
+  opacity: 0;
+  padding: 50px 30px 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  &.active {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+}
+  .drawer--top__close {
+    @include button-reset();
+    opacity: 0.6;
+    position: absolute;
+    right: 36px;
+    top: 24px;
+    &:hover {
+      opacity: 1;
+    }
+    img, span {
+        vertical-align: middle;
+      }
+    img {
+      width: 14px;
+      height: 14px;
+    }
+    span {
+      color: $white;
+      font-family: $font-sans;
+      font-size: em(18);
+      font-weight: 600;
+      text-transform: uppercase;
     }
   }

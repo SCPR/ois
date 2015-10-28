@@ -1,0 +1,32 @@
+// Collection of Media, typically article summaries
+.media-list {
+  @include list-reset();
+}
+  .media-list__flex {
+    display: flex;
+    flex-direction: row;
+  }
+  .media-list__item {
+    flex-grow: 1;
+    margin: 0 10px; 
+  }
+  .media-list__heading {
+    font-family: $font-sans;
+    font-size: em(16);
+    font-weight: 400;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+.media {}
+  .media__content {}
+  .media__image {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .media__title {
+    color: $white;
+    font-size: em(20);
+    font-weight: 300;
+    line-height: em(26, 20);
+  }

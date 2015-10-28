@@ -13,7 +13,7 @@ $(document).ready(function() {
         if (newIndex === 2 && direction === 'down'){
           $('#bg-0').addClass('zoom');
           $('.header__branding').removeClass('hidden');
-          $('.nav-controls').removeClass('hidden');
+          $('.pager--slides').removeClass('hidden');
         }
         else if (newIndex === 3 && direction === 'down'){
           $('#bg-0').removeClass('active');
@@ -24,7 +24,7 @@ $(document).ready(function() {
         else if(newIndex === 1 && direction === 'up'){
           $('#bg-0').removeClass('zoom');
           $('.header__branding').addClass('hidden');
-          $('.nav-controls').addClass('hidden');
+          $('.pager--slides').addClass('hidden');
         }
       }
     });
@@ -43,11 +43,18 @@ $(document).ready(function() {
       $(modalTarget).toggleClass('active');
       return false;
     });
-    // Close all modals on ESC
-    $(document).keyup(function(e) { 
-        if (e.keyCode === 27) { 
-            $('.modal').removeClass('active');
-        } 
+      // Close all modals on ESC
+      $(document).keyup(function(e) { 
+          if (e.keyCode === 27) { 
+              $('.modal').removeClass('active');
+          } 
+      });
+
+    // Toggle top drawer
+    $('[data-toggle="drawer-top"]').click(function(){
+      var drawerTarget = $(this).data('target');
+      $(drawerTarget).toggleClass('active');
+      return false;
     });
 
 });

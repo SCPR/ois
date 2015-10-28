@@ -6,3 +6,7 @@ $alignments: ("left", "center", "right");
     text-align: #{$alignment};
   }
 }
+
+.spacer--4 {
+  margin-bottom: em(16 * 4); 
+}

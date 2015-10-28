@@ -40,11 +40,85 @@
       <h3 class="header__series-title">Officer Involved</h3>
     </div>
     <div class="header__menu">
-      <button class="menu__link">
+      <button class="menu__link" data-toggle="drawer-top" data-target="#seriesMenu">
         <img src="images/icon_plus.svg" class="icon icon--left">
         <span>More</span>
       </button>
     </div>
+    <nav class="drawer drawer--dark drawer--top" id="seriesMenu">
+      <ul class="media-list media-list__flex">
+        <li class="media-list__item">
+          <h4 class="media-list__heading">Series Overview</h4>
+          <div class="media">
+            <a href="#">
+              <img src="http://placehold.it/420x120" class="media__image">
+              <div class="media__content">
+                <h3 class="media__title">Officer Involved: An Introduction</h3>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="media-list__item">
+          <h4 class="media-list__heading">Interactive</h4>
+          <div class="media">
+            <a href="#">
+              <img src="http://placehold.it/420x120" class="media__image">
+              <div class="media__content">
+                <h3 class="media__title">Explore the Data</h3>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="media-list__item">
+          <h4 class="media-list__heading">Features</h4>
+          <div class="media">
+            <a href="#">
+              <img src="http://placehold.it/420x120" class="media__image">
+              <div class="media__content">
+                <h3 class="media__title">Unarmed and Dangerous?</h3>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="media-list__item">
+          <h4 class="media-list__heading">&nbsp;</h4>
+          <div class="media">
+            <a href="#">
+              <img src="http://placehold.it/420x120" class="media__image">
+              <div class="media__content">
+                <h3 class="media__title">Mental Illness</h3>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="media-list__item">
+          <h4 class="media-list__heading">&nbsp;</h4>
+          <div class="media">
+            <a href="#">
+              <img src="http://placehold.it/420x120" class="media__image">
+              <div class="media__content">
+                <h3 class="media__title">Hero Cops</h3>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="media-list__item">
+          <h4 class="media-list__heading">&nbsp;</h4>
+          <div class="media">
+            <a href="#">
+              <img src="http://placehold.it/420x120" class="media__image">
+              <div class="media__content">
+                <h3 class="media__title">Secrecy/Transparency</h3>
+              </div>
+            </a>
+          </div>
+        </li>
+      </ul>
+      <button class="drawer--top__close" data-toggle="drawer-top" data-target="#seriesMenu">
+        <img src="images/ctrl_close-large.svg" alt="Close">
+        <span>Close</span>
+      </button>
+    </nav>
   </header>
   <div class="cover">
     <img src="images/bg_title-slide.jpg" class="slide-bg active" id="bg-0">
@@ -54,8 +128,8 @@
       <div class="bound align--center">
         <img src="images/logo_kpcc-white.svg" alt="89.3 KPCC">
         <h1 class="title">Officer Involved</h1>
-        <p class="subtitle">Mauris euismod libero eget ex tincidunt, varius elementum libero tincidunt.</p>
-        <p><a href="#credits" class="link link--subtle" data-toggle="modal">Credits</a></p>
+        <p class="subtitle">A KPCC investigation into police shootings in Los Angeles</p>
+        <p class="spacer--4"><a href="#credits" class="link link--subtle" data-toggle="modal">Credits</a></p>
         <button class="button button--begin next-slide">
           <img src="images/ctrl_arrow-down.svg" class="icon icon--left" width="20" alt="Begin">
           <span>Begin</span>
