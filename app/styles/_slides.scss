@@ -33,10 +33,14 @@
     transition-delay: 0.2s;
   }
 }
+.slide__img {
+  margin-top: 18px;
+}
 .slide__sharing {
   position: absolute;
   right: 32px;
   bottom: 32px;
+  z-index: 110;
 }
   .sharing__label {
     color: $blue-muted;

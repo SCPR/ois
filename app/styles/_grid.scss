@@ -1,3 +1,4 @@
+// Bounding blocks to contain content
 .bound {
   margin: 0 auto;
   max-width: em(1040px);
@@ -14,3 +15,10 @@
   .bound--singlecol-small {
     max-width: em(660px);
   }
+// Alignment elements to float content
+.bound__push-right {
+  margin-left: 60%;
+}
+.bound__push-left {
+  margin-right: 60%;
+}

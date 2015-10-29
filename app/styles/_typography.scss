@@ -42,6 +42,9 @@
     font-size: em(18);
     line-height: em(32, 18);
   }
+  .copy--flush-top {
+    margin-top: 0;
+  }
   .copy--emphasis {
     color: $blue-bright;
   }
