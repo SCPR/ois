@@ -1,5 +1,9 @@
 // Type Styles for the Sequential Narrative
 .typography--sequential {
+  @media (max-width: em(1000)) and (max-height: em(1000)) {
+    font-size: 14px;
+  }
+
   .title {
     font-family: $font-sans;
     font-size: em(68);
