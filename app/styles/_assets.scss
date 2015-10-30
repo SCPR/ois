@@ -1,0 +1,16 @@
+.asset {}
+  .asset--photo {}
+    .asset--photo__img {}
+    .asset--photo__caption {}
+    .asset--photo__credit {}
+
+  .asset--graphic {}
+    .asset--graphic__img {}
+    .asset--graphic__title {}
+    .asset--graphic__caption {}
+
+  .asset--audio {}
+  .asset--audio-playing {}
+    .asset--audio__play-button {}
+    .asset--audio__title {}
+    .asset--audio__duration {}

@@ -74,3 +74,22 @@
     font-weight: 300;
   }
 }
+
+// Type Styles for Editorial Features
+.typography--feature {
+  .headline {}
+    .headline--light {}
+    .headline--dark {}
+    .headline--giant {}
+    .headline--large {}
+
+  .byline {}
+
+  .story-body {
+    p {}
+    ul {}
+  }
+  .story-body__inagural {}
+  .story-body__subhead {}
+  .story-body__pullquote {}
+}
