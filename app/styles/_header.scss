@@ -6,6 +6,9 @@
   right: 0;
   top: 0;
 }
+  &.header--light {
+    color: $black;
+  }
   .header__branding {
     opacity: 1;
     -webkit-transition: opacity 0.8s linear;
@@ -24,6 +27,9 @@
       height: 20px;
       margin: 0 8px;
       width: 1px;
+      .header--light & {
+        background: $black;
+      }
     }
     .header__series-title {
       display: inline-block;
@@ -44,6 +50,9 @@
       font-size: em(18);
       font-weight: 600;
       text-transform: uppercase;
+      .header--light & {
+        color: $black;
+      }
       img, span {
         vertical-align: middle;
       }
