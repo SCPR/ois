@@ -1,16 +1,82 @@
-.asset {}
-  .asset--photo {}
-    .asset--photo__img {}
-    .asset--photo__caption {}
-    .asset--photo__credit {}
+.asset {
+  margin-top: em($baseline);
+}
+  .asset--photo {
+    margin-bottom: em($baseline);
+  }
+    .asset--photo__img {
+      display: block;
+      margin-bottom: em($baseline);
+    }
+    .asset--photo__description {
+      display: block;
+    }
+    .asset--photo__caption {
+      color: $gray-medium;
+      display: inline-block;
+      font-family: $font-sans-alt;
+      font-size: em(16);
+      font-style: italic;
+      line-height: em(22);
+    }
+    .asset--photo__credit {
+      color: $blue-medium;
+      display: inline-block;
+      font-family: $font-sans-alt;
+      font-size: em(14);
+      font-weight: 800;
+      line-height: em(22, 14);
+      text-transform: uppercase;
+    }
 
-  .asset--graphic {}
-    .asset--graphic__img {}
-    .asset--graphic__title {}
-    .asset--graphic__caption {}
+  .asset--graphic {
+    padding: em($baseline) 0;
+  }
+    .asset--graphic__img {
+      display: block;
+      margin: em($baseline) auto;
+    }
+    .asset--graphic__title {
+      color: $black-near;
+      font-family: $font-sans;
+      font-size: em(18);
+      font-weight: 600;
+      line-height: em(32);
+      text-transform: uppercase;
+    }
+    .asset--graphic__caption {
+      color: $gray-medium;
+      font-family: $font-sans;
+      font-size: em(18);
+      font-weight: 800;
+      line-height: em(32);
+    }
+      .graphic__caption--emphasis {
+        color: $blue-cobalt;
+      }
 
-  .asset--audio {}
-  .asset--audio-playing {}
-    .asset--audio__play-button {}
-    .asset--audio__title {}
-    .asset--audio__duration {}
+  .asset--audio {
+    background: rgba($blue-medium, 0.5);
+    margin: em($baseline * 2);
+  }
+  .asset--audio-playing {
+    background: $gray-medium;
+  }
+    .asset--audio__play-button {
+      background: $blue-medium;
+    }
+    .asset--audio__title {
+      color: $white;
+      display: inline-block;
+      font-family: $font-sans;
+      font-size: em(18);
+      font-weight: 800;
+    }
+    .asset--audio__duration {
+      color: $white;
+      display: inline-block;
+      font-family: $font-sans;
+      font-size: em(14);
+      font-weight: 800;
+      text-transform: uppercase;
+    }

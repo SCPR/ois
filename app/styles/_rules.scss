@@ -1,3 +1,15 @@
-.rule {}
-  .rule--dark {}
-  .rule--light {}
+.rule {
+  border: 0;
+  margin: 0;
+  height: 1px;
+  width: 100%;
+}
+  .rule--dark {
+    background: $gray-light;
+  }
+  .rule--light {
+    background: $blue-light;
+  }
+  .rule--pale {
+    background: rgba($blue-light, 0.3);
+  }

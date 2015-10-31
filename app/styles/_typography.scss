@@ -77,19 +77,73 @@
 
 // Type Styles for Editorial Features
 .typography--feature {
-  .headline {}
-    .headline--light {}
-    .headline--dark {}
-    .headline--giant {}
+  .headline {
+    font-family: $font-serif;
+    font-weight: 400;
+    margin: 0 auto;
+  }
+    .headline--light {
+      color: $white;
+    }
+    .headline--dark {
+      color: $black;
+    }
+    .headline--giant {
+      font-size: em(119);
+      line-height: em(128, 119);
+    }
     .headline--large {}
 
-  .byline {}
+  .byline {
+    color: $gray-medium;
+    font-family: $font-sans;
+    font-size: em(18);
+    line-height: em(24, 18);
+  }
+    .byline__link {
+      font-weight: 600;
+    }
 
   .story-body {
-    p {}
-    ul {}
+    color: $black-near;
+    p, li {
+      font-size: em(18);
+      line-height: em($baseline, 18);
+      margin-bottom: em($baseline);
+      margin-top: 0;
+    }
   }
-  .story-body__inagural {}
-  .story-body__subhead {}
-  .story-body__pullquote {}
+  .story-body__inagural {
+    font-size: em(34);
+    line-height: em(64, 34);
+    margin-bottom: em($baseline * 2);
+  }
+  .story-body__subhead {
+    font-family: $font-sans;
+    font-size: em(34);
+    font-weight: 800;
+    line-height: em(64, 34);
+    text-transform: uppercase;
+  }
+  .story-body__pullquote {
+    background: $white;
+    border-left: 1px solid $blue-light;
+    color: $blue-medium;
+    font-family: $font-serif;
+    font-size: em(30);
+    line-height: em(44, 30);
+    margin-bottom: em($baseline * 2);
+    padding: em($baseline);
+    position: relative;
+    &:before {
+      background: url('../images/icon_pullquote.svg') no-repeat left top;
+      content: "";
+      display: block;
+      position: absolute;
+      width: 134px;
+      height: 119px;
+      left: -134px;
+      top: 0;
+    }
+  }
 }

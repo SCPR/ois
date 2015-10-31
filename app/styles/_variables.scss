@@ -1,17 +1,24 @@
 // Color Variables
 $white:           #fff;
 $black:           #000;
-$charcoal:        #333;
+$black-near:      #212121;
+$gray-dark:       #333;
+$gray-medium:     #575E68;
+$gray-light:      #D0D0D0;
 $blue-midnight:   #0F1620;
 $blue-dark:       #203047;
+$blue-cobalt:     #254998;
 $blue-medium:     #698AC7;
 $blue-bright:     #8EB5FF;
 $blue-muted:      #7D90AC;
 $blue-light:      #D5E1F3;
 $orange:          #F07A30;
 
-// Font Stack variables
+// Font Stack Variables
 $font-serif:      "merriweather", serif;
 $font-sans:       "freight-sans-pro", sans-serif;
 $font-sans-alt:   "proxima-nova", sans-serif;
 $font-sans-cond:  "proxima-nova-condensed", sans-serif;
+
+// Typography Variables
+$baseline:        32px;
