@@ -3,6 +3,26 @@
 }
   .asset--photo {
   }
+  .asset--photo-right {
+    float: right;
+    margin: em($baseline) (grid-calc(2) * -1) em($baseline) em($baseline);
+    max-width: 420px;
+    @media screen and (max-width: grid-calc(9)) {
+      float: none;
+      margin: em($baseline) 0;
+      max-width: 100%;
+    }
+  }
+  .asset--photo-left {
+    float: left;
+    margin: em($baseline) em($baseline) em($baseline) (grid-calc(2) * -1);
+    max-width: 420px;
+    @media screen and (max-width: grid-calc(9)) {
+      float: none;
+      margin: em($baseline) 0;
+      max-width: 100%;
+    }
+  }
     .asset--photo__img {
       display: block;
       margin-bottom: em($baseline);
