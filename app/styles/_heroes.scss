@@ -2,6 +2,11 @@
 // And you, you will be queen
 .hero {
   background-size: cover;
+  margin-bottom: em($baseline * 2);
   width: 100%;
 }
-  .hero--fullpage {}
+  .hero--fullpage {
+    height:100vh;
+    min-height: em($baseline * 24);
+    position: relative;
+  }

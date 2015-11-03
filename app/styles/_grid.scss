@@ -3,6 +3,7 @@
   margin: 0 auto;
   max-width: em(1040px);
 }
+  // Bounding blocks for simple single column layouts  
   .bound--singlecol-full {
     max-width: em(1440px);
   }
@@ -15,6 +16,36 @@
   .bound--singlecol-small {
     max-width: em(660px);
   }
+  // Bounding blocks for story layouts
+  .bound--story {
+    max-width: grid-calc(5);
+    @media screen and (max-width: grid-calc(5) - em(2)) {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+  .bound--story-med {
+    max-width: grid-calc(6);
+    @media screen and (max-width: grid-calc(6) - em(2)) {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+  .bound--story-wide {
+    max-width: grid-calc(7);
+    @media screen and (max-width: grid-calc(7) - em(2)) {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+  .bound--story-full {
+    max-width: grid-calc(9);
+    @media screen and (max-width: grid-calc(9) - em(2)) {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+
 // Alignment elements to float content
 .bound__push-right {
   margin-left: 60%;

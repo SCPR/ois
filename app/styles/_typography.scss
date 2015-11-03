@@ -101,28 +101,27 @@
     line-height: em(24, 18);
   }
     .byline__link {
+      color: $gray-medium;
       font-weight: 600;
     }
 
   .story-body {
     color: $black-near;
-    p, li {
-      font-size: em(18);
-      line-height: em($baseline, 18);
-      margin-bottom: em($baseline);
-      margin-top: 0;
-    }
+    font-size: em(18);
+    line-height: em($baseline, 18);
+    margin-bottom: em($baseline);
+    margin-top: 0;
   }
   .story-body__inagural {
     font-size: em(34);
     line-height: em(64, 34);
-    margin-bottom: em($baseline * 2);
   }
   .story-body__subhead {
     font-family: $font-sans;
     font-size: em(34);
-    font-weight: 800;
-    line-height: em(64, 34);
+    font-weight: 700;
+    line-height: em(36, 34);
+    margin-bottom: em($baseline / 2);
     text-transform: uppercase;
   }
   .story-body__pullquote {
@@ -131,9 +130,10 @@
     color: $blue-medium;
     font-family: $font-serif;
     font-size: em(30);
+    font-weight: 300;
     line-height: em(44, 30);
-    margin-bottom: em($baseline * 2);
-    padding: em($baseline);
+    margin-bottom: em($baseline);
+    padding: em($baseline / 2);
     position: relative;
     &:before {
       background: url('../images/icon_pullquote.svg') no-repeat left top;
@@ -142,8 +142,8 @@
       position: absolute;
       width: 134px;
       height: 119px;
-      left: -134px;
-      top: 0;
+      left: -119px;
+      top: 24px;
     }
   }
 }

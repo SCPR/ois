@@ -1,8 +1,7 @@
 .asset {
-  margin-top: em($baseline);
+  margin: em($baseline * 2) 0;
 }
   .asset--photo {
-    margin-bottom: em($baseline);
   }
     .asset--photo__img {
       display: block;
@@ -13,7 +12,7 @@
     }
     .asset--photo__caption {
       color: $gray-medium;
-      display: inline-block;
+      display: inline;
       font-family: $font-sans-alt;
       font-size: em(16);
       font-style: italic;
@@ -21,10 +20,10 @@
     }
     .asset--photo__credit {
       color: $blue-medium;
-      display: inline-block;
+      display: inline;
       font-family: $font-sans-alt;
       font-size: em(14);
-      font-weight: 800;
+      font-weight: 700;
       line-height: em(22, 14);
       text-transform: uppercase;
     }
@@ -42,13 +41,14 @@
       font-size: em(18);
       font-weight: 600;
       line-height: em(32);
+      margin-top: em($baseline);
       text-transform: uppercase;
     }
     .asset--graphic__caption {
       color: $gray-medium;
       font-family: $font-sans;
       font-size: em(18);
-      font-weight: 800;
+      font-weight: 700;
       line-height: em(32);
     }
       .graphic__caption--emphasis {
@@ -57,26 +57,37 @@
 
   .asset--audio {
     background: rgba($blue-medium, 0.5);
-    margin: em($baseline * 2);
+    cursor: pointer;
+    height: em($baseline * 2);
+    margin: em($baseline * 2) 0;
+    padding-left: 146px;
+    position: relative;
   }
   .asset--audio-playing {
     background: $gray-medium;
   }
     .asset--audio__play-button {
-      background: $blue-medium;
+      background: $blue-medium url('../images/ctrl_audio-play.svg') no-repeat 53px 16px;
+      width: 128px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
     }
     .asset--audio__title {
       color: $white;
       display: inline-block;
       font-family: $font-sans;
       font-size: em(18);
-      font-weight: 800;
+      font-weight: 700;
+      margin-top: 19px;
     }
     .asset--audio__duration {
       color: $white;
       display: inline-block;
-      font-family: $font-sans;
+      font-family: $font-sans-alt;
       font-size: em(14);
-      font-weight: 800;
+      font-weight: 700;
+      margin-left: 18px;
       text-transform: uppercase;
     }

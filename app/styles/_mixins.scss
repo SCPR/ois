@@ -12,3 +12,14 @@
   padding: 0;
   margin: 0;
 }
+
+// Grid functions
+@function grid-calc($cols) {
+  @return ($grid-col * $cols) + ($grid-gutter * ($cols - 1));
+}
+@function grid-pull-calc($cols) {
+  @return (($grid-col * $cols) + ($grid-gutter * $cols)) * -1;
+}
+@function grid-push-calc($cols) {
+  @return ($grid-col * $cols) + ($grid-gutter * $cols);
+}
