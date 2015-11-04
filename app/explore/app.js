@@ -273,6 +273,8 @@
 
         chart_data: function(obj, total){
 
+            console.log(total);
+
             // display the overall figures
             var people_empty = _.isEmpty(obj.people.models);
             if (people_empty === false){
@@ -293,7 +295,7 @@
                 _.keys(obj.yearly).forEach(function(value){
                     var data = obj.yearly[value];
                     if (data.length > 0){
-                        $("td#people_" + value).html(data.length + " / " + total + "<br />" + percentify(data.length / total) + "%");
+                        $("td#people_" + value).html(data.length + " / " + obj.people.length + "<br />" + percentify(data.length / obj.people.length) + "%");
                     } else {
                         $("td#people_" + value).html("n/a" + "<br />" + "0.00%");
                     };
@@ -314,7 +316,7 @@
                 _.keys(obj.yearly).forEach(function(value){
                     var data = obj.yearly[value];
                     if (data.length > 0){
-                        $("td#people_" + value).html(data.length + " / " + total + "<br />" + percentify(data.length / total) + "%");
+                        $("td#people_" + value).html(data.length + " / " + obj.people.length + "<br />" + percentify(data.length / obj.people.length) + "%");
                     } else {
                         $("td#people_" + value).html("n/a" + "<br />" + "0.00%");
                     };
