@@ -1,1 +1,99 @@
-<!-- Interactive goes here  -->
+<!DOCTYPE html>
+
+<!-- begin doc -->
+<html lang="en">
+
+    <!-- begin header -->
+    <head>
+        <link href="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/css/main-foundation-style-v3.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="styles.css" rel="stylesheet" type="text/css" media="all" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    </head>
+    <!-- end header -->
+
+    <!-- begin body -->
+    <body>
+
+        <!-- begin main container -->
+        <div class="data-container">
+            <div class="data-filters"></div>
+        </div>
+        <!-- end main container -->
+
+        <!-- begin scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.1/backbone-min.js"></script>
+        <script src="app.js"></script>
+
+        <script id="my_template" type="text/template">
+            <div id="table-container">
+                <div class="row">
+                    <a id="clear-filters" class="btn btn-success btn-block" href="javascript:void(0)">Clear Filters</a>
+                    <form role="form" class="form-inline">
+                        <@ _.each(filters, function(filter) { @>
+                            <h5><@= filter.proper @></h5>
+                            <@ _.each(filter.radio_buttons, function(item){ @>
+                                <div class="radio col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                    <label class="radio-inline" for="<@= item.field_name @>">
+                                        <@ _.each(item.buttons, function(button){ @>
+                                            <input type="radio" class="<@= filter.type @>" id="<@= button.opt_field @>" name="<@= item.field_name @>" value="<@= button.opt @>"> <@= button.opt @>
+                                        <@ }); @>
+                                    </label>
+                                </div>
+                            <@ }); @>
+                            <@ _.each(filter.checkboxes, function(item){ @>
+                                <div class="checkbox col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                    <label class="checkbox-inline" for="<@= item.opt_field @>">
+                                        <input type="checkbox" class="<@= filter.type @>" id="<@= item.opt_field @>" value="<@= item.opt_field @>"> <@= item.opt @>
+                                    </label>
+                                </div>
+                            <@ }); @>
+                        <@ }); @>
+                    </form>
+
+                    <table class="kpcc-table">
+                        <thead>
+                            <tr>
+                                <th style="text-align: center; width: 16.6%;">People</th>
+                                <@ _.each(people_years, function(year){ @>
+                                    <th style="text-align: center; width: 16.6%;"><@= year @></th>
+                                <@ }); @>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="swap" id="filtered-people" style="text-align: center; width: 16.6%;"></td>
+                                <@ _.each(people_years, function(year){ @>
+                                    <td class="swap" id="people_<@= year @>" style="text-align: center; width: 16.6%;">--</td>
+                                <@ }); @>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <ul class="chart">
+                    <li class="axis">
+                        <div class="label">100</div>
+                        <div class="label">80</div>
+                        <div class="label">60</div>
+                        <div class="label">40</div>
+                        <div class="label">20</div>
+                    </li>
+                    <@ _.each(people_years, function(year){ @>
+                        <li class="bar bar_chart" id="people_<@= year @>" title="<@= year @>">
+                            <div class="percent" id="people_<@= year @>"></div>
+                            <div class="skill"><@= year @></div>
+                        </li>
+                    <@ }); @>
+                </ul>
+
+            </div>
+        </script>
+        <!-- end scripts -->
+
+    </body>
+    <!-- end body -->
+
+</html>
+<!-- end document -->
