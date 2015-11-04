@@ -82,6 +82,9 @@
     margin: em($baseline * 2) 0;
     padding-left: 146px;
     position: relative;
+    @media (max-width: 700px) {
+      padding-left: 100px;
+    }
   }
   .asset--audio-playing {
     background: $gray-medium;
@@ -93,6 +96,10 @@
       left: 0;
       top: 0;
       bottom: 0;
+      @media (max-width: 700px) {
+        background-position: 29px 13px;
+        width: 80px;
+      }
     }
     .asset--audio__title {
       color: $white;
@@ -101,6 +108,9 @@
       font-size: em(18);
       font-weight: 700;
       margin-top: 19px;
+      @media (max-width: 700px) {
+        margin-top: 7px;
+      }
     }
     .asset--audio__duration {
       color: $white;
@@ -110,4 +120,8 @@
       font-weight: 700;
       margin-left: 18px;
       text-transform: uppercase;
+      @media (max-width: 700px) {
+        display: block;
+        margin: 4px 0 0;
+      }
     }

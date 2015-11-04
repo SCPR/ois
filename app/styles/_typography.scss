@@ -77,6 +77,9 @@
 
 // Type Styles for Editorial Features
 .typography--feature {
+  @media (max-width: 700px) {
+    font-size: 14px;
+  }
   .headline {
     font-family: $font-serif;
     font-size: em(84);
@@ -94,6 +97,14 @@
       font-size: em(119);
       font-weight: 300;
       line-height: em(128, 119);
+      @media (max-width: 800px) {
+        font-size: em(81);
+        line-height: em(95, 81);
+      }
+      @media (max-width: 600px) {
+        font-size: em(60);
+        line-height: em(70, 60);
+      }
     }
     .headline--large {}
 
@@ -118,6 +129,11 @@
   .story-body__inagural {
     font-size: em(34);
     line-height: em(64, 34);
+    @media (max-width: 600px) {
+      font-size: em(28);
+      line-height: em(48, 28);
+      text-align: left;
+    }
   }
   .story-body__subhead {
     font-family: $font-sans;
@@ -126,6 +142,10 @@
     line-height: em(36, 34);
     margin-bottom: em($baseline / 2);
     text-transform: uppercase;
+    @media (max-width: 600px) {
+      font-size: em(28);
+      line-height: em(30, 28);
+    }
   }
   .story-body__subhead--humble {
     color: $gray-medium;
@@ -142,7 +162,7 @@
     font-size: em(30);
     font-weight: 300;
     line-height: em(44, 30);
-    margin-bottom: em($baseline);
+    margin: 0 0 em($baseline);
     padding: em($baseline / 2);
     position: relative;
     &:before {
@@ -155,9 +175,25 @@
       left: -119px;
       top: 24px;
     }
+    @media screen and (max-width: grid-calc(8) - em(1)) {
+      font-size: em(24);
+      line-height: em(36, 24);
+      margin-left: 60px;
+      padding: 0 0 0 20px;
+      &:before {
+        background-size: 100% 100%;
+        width: 67px;
+        height: 60px;
+        left: -67px;
+        top: 0;
+      }
+    }
   }
   .story-body__list {
     list-style-image: url('../images/icon_bullet-blue.svg');
+    @media screen and (max-width: 600px) {
+      padding-left: 20px;
+    }
   }
   .heading {
     color: $black;
