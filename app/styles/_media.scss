@@ -25,8 +25,37 @@
     margin-bottom: 10px;
   }
   .media__title {
-    color: $white;
     font-size: em(20);
     font-weight: 300;
     line-height: em(26, 20);
+  }
+  .media__teaser {
+    font-size: em(14);
+    font-weight: 300;
+    line-height: em(20, 14);
+  }
+
+  .media--light, .media--light a {
+    color: $black-near;
+  }
+  .media--dark, .media--dark a {
+    color: $white;
+  }
+  .media--asset-left {
+    @include clearfix();
+    .media__image {
+      float: left;
+      margin-right: 5%;
+      width: 55%;
+    }
+  }
+  .media--large {
+    .media__title {
+      font-size: em(34);
+      line-height: em(64, 34)
+    }
+    .media__teaser {
+      font-size: em(18);
+      line-height: em(32, 18);
+    }
   }
