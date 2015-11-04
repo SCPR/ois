@@ -1,16 +1,18 @@
 // I, I will be king
 // And you, you will be queen
 .hero {
+  align-items: center;
   background-size: cover;
+  display: flex;
+  justify-content: center;
   margin-bottom: em($baseline * 2);
   width: 100%;
 }
   .hero--fullpage {
     height:100vh;
     min-height: em($baseline * 24);
-    position: relative;
   }
   .hero__section--bottom {
-    top: 70%;
-    position: relative;
+   align-self: flex-end;
+   padding: 3em;
   }
