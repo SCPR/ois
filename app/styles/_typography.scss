@@ -79,7 +79,9 @@
 .typography--feature {
   .headline {
     font-family: $font-serif;
+    font-size: em(84);
     font-weight: 400;
+    line-height: em(108, 84);
     margin: 0 auto;
   }
     .headline--light {
@@ -125,6 +127,13 @@
     margin-bottom: em($baseline / 2);
     text-transform: uppercase;
   }
+  .story-body__subhead--humble {
+    color: $gray-medium;
+    font-size: em(18);
+    line-height: em(32, 18);
+    margin-bottom: 0;
+    text-transform: none;
+  }
   .story-body__pullquote {
     background: $white;
     border-left: 1px solid $blue-light;
@@ -145,6 +154,43 @@
       height: 119px;
       left: -119px;
       top: 24px;
+    }
+  }
+  .story-body__list {
+    list-style-image: url('../images/icon_bullet-blue.svg');
+  }
+  .heading {
+    color: $black;
+    font-family: $font-sans;
+    margin-bottom: em($baseline);
+    text-transform: uppercase;
+  }
+  .heading--aside {
+    font-size: em(18);
+    font-weight: 700;
+  }
+  .link--resource {
+    color: $blue-medium;
+    display: block;
+    font-family: $font-sans;
+    font-size: em(16);
+    font-weight: 400;
+    &:before {
+      display: inline-block;
+      margin-right: 6px;
+      width: 14px;
+      height: 19px;
+      vertical-align: text-top;
+    }
+    &.data {
+      &:before {
+        content: url('../images/icon_data.svg');
+      }
+    }
+    &.document {
+      &:before {
+        content: url('../images/icon_document.svg');
+      }
     }
   }
 }
