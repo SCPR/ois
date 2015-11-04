@@ -47,6 +47,11 @@
       float: left;
       margin-right: 5%;
       width: 55%;
+      @media (max-width: 800px) {
+        float: none;
+        margin: 0 0 18px;
+        width: 100%;
+      }
     }
   }
   .media--large {
@@ -57,5 +62,9 @@
     .media__teaser {
       font-size: em(18);
       line-height: em(32, 18);
+      @media (max-width: 800px) {
+        font-size: em(16);
+        line-height: em(28, 16);
+      }
     }
   }

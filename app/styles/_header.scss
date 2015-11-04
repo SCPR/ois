@@ -12,6 +12,9 @@
   &.header--light {
     color: $black;
   }
+  .header__container {
+    padding: 18px 32px;
+  }
   .header__branding {
     opacity: 1;
     -webkit-transition: opacity 0.8s linear;

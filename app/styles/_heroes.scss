@@ -11,8 +11,17 @@
   .hero--fullpage {
     height:100vh;
     min-height: em($baseline * 24);
+    @media (max-width: 600px) {
+      height: auto;
+      min-height: em($baseline * 18);
+      overflow: hidden;
+    }
   }
   .hero__section--bottom {
    align-self: flex-end;
    padding: 3em;
+   @media screen and (max-width: 600px) {
+    margin: 0 20px;
+    padding: 0 0 2em;
+   }
   }
