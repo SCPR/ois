@@ -1,0 +1,8 @@
+.share-story {
+  @include list-reset();
+  margin: em($baseline) 0;
+}
+  .share-story__item {
+    display: inline-block;
+    margin: 0 4px;
+  }
