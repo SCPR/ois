@@ -23,29 +23,6 @@
         return parseFloat(value.toFixed(2));
     };
 
-    window.get_selected_filters = function(){
-        var filters = {};
-        filters.incidents = [];
-        filters.peoples = [];
-        $("input:radio").each(function(){
-            var $this = $(this);
-            if($this.is(":checked")){
-                var filter_id = $this.attr("id");
-                var filter_type = $this.attr("class");
-                filters[filter_type].push(filter_id)
-            };
-        });
-        $("input:checkbox").each(function(){
-            var $this = $(this);
-            if($this.is(":checked")){
-                var filter_id = $this.attr("id");
-                var filter_type = $this.attr("class");
-                filters[filter_type].push(filter_id)
-            }
-        });
-        return filters;
-    };
-
     window.create_groups = function(object, key){
         var output = object.groupBy(function(model){
             return model.get(key);
@@ -151,7 +128,7 @@
             });
             var peoples = new App.Collections.Peoples(array_of_people);
             this.applicationVisuals = new App.Views.ApplicationVisuals({
-                // total_incidents: incidents,
+                total_incidents: incidents,
                 total_peoples: peoples,
                 container: ".data-filters"
             });
@@ -169,11 +146,11 @@
 
             this.view_object.template = template("my_template");
 
-            // this.view_object.relevant_incidents = new App.Collections.Incidents(
-            //     this.view_object.total_incidents.where({
-            //         case_relevant: true
-            //     })
-            // );
+            this.view_object.relevant_incidents = new App.Collections.Incidents(
+                this.view_object.total_incidents.where({
+                    case_relevant: true
+                })
+            );
 
             this.view_object.relevant_people = new App.Collections.Peoples(
                this.view_object.total_peoples.where({
@@ -184,32 +161,13 @@
             this.view_object = this.calculate_model_attributes(this.view_object);
 
             this.view_object.filters = [{
-                // type: "incidents",
-                // proper: "Incident",
-                // radio_buttons: [{
-                //     field_name: "fatal_non",
-                //     buttons: [
-                //         {opt: "Fatal", opt_field: "fatal"},
-                //         {opt: "Non-fatal", opt_field: "nonfatal_calc"},
-                //     ]}
-                //     // , {
-                //     // field_name: "lethal_force_as_first_response",
-                //     // buttons: [
-                //     //     {opt: "Lethal Force as First Response", opt_field: "lethal_force_as_first_calc"},
-                //     //     {opt: "Non-lethal Force as First Response", opt_field: "other_force_as_first_calc"},
-                //     // ]}
-                // ],
-                // checkboxes: []}, {
-                // type: "peoples",
-                // proper: "Officer",
-                // radio_buttons: [],
-                // checkboxes: [
-                //     {opt: "Officer Issued Commands That Were Ignored", opt_field: "person_ignored_officer_commands"},
-                //     {opt: "Officer Said Person Reached for Waistband", opt_field: "mention_of_waistband_in_report"},
-                //     {opt: "Officer Couldn't See Person's Hands", opt_field: "officer_couldnt_see_persons_hands"},
-                //     {opt: "Officer Said Person Grabbed For Service Firearm", opt_field: "grabbed_officers_weapon"},
-                //     {opt: "Officer Said Vehicle Used as Weapon", opt_field: "vehicle_as_weapon"},
-                // ]}, {
+                type: "incidents",
+                proper: "Incident",
+                radio_buttons: [],
+                checkboxes: [
+                    {opt: "Officer Defense Of Civillians", opt_field: "officer_defense_of_civillians"},
+                    {opt: "Car Stop", opt_field: "car_stop"},
+                ]}, {
                 type: "peoples",
                 proper: "Person",
                 radio_buttons: [{
@@ -249,7 +207,6 @@
             view_object.relevant_people.forEach(function(model, index){
                 var _this = model.attributes;
                 model.set("year_of_incident", parse_year(_this.date_of_incident));
-
                 // push gender to view object
                 if (_this.person_gender != null || _this.person_gender != undefined){
                     if (_this.person_gender === "MALE"){
@@ -266,7 +223,6 @@
                         model.set("person_female", false);
                     };
                 };
-
                 // push ethnicities to view object
                 if (_this.person_ethnicity != null || _this.person_ethnicity != undefined){
                     if (_this.person_ethnicity === "HISPANIC/LATIN AMERICAN"){
@@ -278,6 +234,10 @@
                     };
                     view_object.ethnicities.push(_this.person_ethnicity);
                 };
+            });
+            view_object.relevant_incidents.forEach(function(model, index){
+                var _this = model.attributes;
+                model.set("year_of_incident", parse_year(_this.date_of_incident));
             });
             view_object.people_years = _.uniq(view_object.relevant_people.pluck("year_of_incident")).sort();
             view_object.genders = _.uniq(view_object.genders).sort();
@@ -296,170 +256,170 @@
             this.view_object.obj = {};
             this.view_object.obj.filtered = {};
             this.view_object.obj.init = {};
-
-            // this.view_object.obj.total_incidents_initial = this.view_object.total_incidents.length;
-            // this.view_object.obj.total_people_initial = this.view_object.total_people.length;
-            // this.view_object.obj.init.incidents = this.view_object.relevant_incidents;
-            // this.view_object.obj.init.yearly_incident = create_groups(this.view_object.obj.init.incidents, "year_of_incident");
-
             this.view_object.obj.init.people = this.view_object.relevant_people;
-            this.view_object.obj.init.yearly_people = create_groups(this.view_object.obj.init.people, "year_of_incident");
-
+            this.view_object.obj.init.yearly = create_groups(this.view_object.obj.init.people, "year_of_incident");
+            this.view_object.obj.total = this.view_object.obj.init.people.length;
             this.display_data(this.view_object.obj, true);
         },
 
         display_data: function(obj, initial){
-            // $("td#all-people").html(obj.total_people_initial);
-            $("td#relevant-people").html(obj.init.people.length);
-            // $("td#all-incidents").html(obj.total_incidents_initial);
-            // $("td#relevant-incidents").html(obj.init.incidents.length);
+            $("td#relevant-people").html(this.view_object.obj.total);
             if (initial === true){
-                this.chart_initial_data(obj);
-                // this.chart_data(obj.init, obj.init.people.length, "black");
+                this.chart_data(obj.init, this.view_object.obj.total);
             } else {
-                this.chart_filtered_data(obj);
-                // this.chart_data(obj.filtered, obj.init.people.length, "red");
+                this.chart_data(obj.filtered, this.view_object.obj.total);
             };
         },
 
-        // chart_data: function(obj, total, color){
-        //     if (obj.people.length > 0){
-        //         $("td#filtered-people").html(obj.people.length + " / " + total + "<br />" + percentify(obj.people.length / total) + "%");
-        //         $("td#filtered-people").css({color: color});
-        //     } else {
-        //         $("td#filtered-people").html("n/a" + "<br />" + "0.00%");
-        //         $("td#filtered-people").css({color: "rgba(0, 0, 0, 0.3)"});
-        //     };
-        //     var is_empty = _.isEmpty(obj.yearly_people);
-        //     if (is_empty === true){
-        //         _.keys(obj.yearly_people).forEach(function(value){
-        //             $("td#people_" + value).html("n/a" + "<br />" + "0.00%");
-        //             $("td#people_" + value).css({color: "rgba(0, 0, 0, 0.3)"});
-        //         });
-        //     } else {
-        //         this.view_object.people_years.forEach(function(item, index, list){
-        //             var has_year_data = _.has(obj.yearly_people, item);
-        //             if (has_year_data === false){
-        //                 obj.yearly_people[item] = [];
-        //             }
-        //         });
-        //         _.keys(obj.yearly_people).forEach(function(value){
-        //             var data = obj.yearly_people[value];
-        //             if (data.length > 0){
-        //                 $("td#people_" + value).html(data.length + " / " + total + "<br />" + percentify(data.length / total) + "%");
-        //                 $("td#people_" + value).css({color: color});
-        //             } else {
-        //                 $("td#people_" + value).html("n/a" + "<br />" + "0.00%");
-        //                 $("td#people_" + value).css({color: "rgba(0, 0, 0, 0.3)"});
-        //             };
-        //             $("div#people_" + value).html(data.length);
-        //             var height = "height: " + percentify(data.length / 100) + "%"
-        //             $("li#people_" + value).attr("style", height);
-        //         });
-        //     };
-        // },
+        chart_data: function(obj, total){
 
-        chart_initial_data: function(obj){
-            if (obj.init.people.length > 0){
-                $("td#filtered-people").html(obj.init.people.length + " / " + obj.init.people.length + "<br />" + percentify(obj.init.people.length / obj.init.people.length) + "%");
-                $("td#filtered-people").css({color: "black"});
+            // display the overall figures
+            var people_empty = _.isEmpty(obj.people.models);
+            if (people_empty === false){
+                $("td#filtered-people").html(obj.people.length + " / " + total + "<br />" + percentify(obj.people.length / total) + "%");
             } else {
                 $("td#filtered-people").html("n/a" + "<br />" + "0.00%");
-                $("td#filtered-people").css({color: "rgba(0, 0, 0, 0.3)"});
             };
-            var is_empty = _.isEmpty(obj.init.yearly_people);
-            if (is_empty === true){
-                _.keys(obj.init.yearly_people).forEach(function(value){
-                    $("td#people_" + value).html("n/a" + "<br />" + "0.00%");
-                    $("td#people_" + value).css({color: "rgba(0, 0, 0, 0.3)"});
+
+            // display the year by year figures
+            var yearly_empty = _.isEmpty(obj.yearly);
+            if (yearly_empty === false){
+                this.view_object.people_years.forEach(function(item, index, list){
+                    var has_year_data = _.has(obj.yearly, item);
+                    if (has_year_data === false){
+                        obj.yearly[item] = [];
+                    };
+                });
+                _.keys(obj.yearly).forEach(function(value){
+                    var data = obj.yearly[value];
+                    if (data.length > 0){
+                        $("td#people_" + value).html(data.length + " / " + total + "<br />" + percentify(data.length / total) + "%");
+                    } else {
+                        $("td#people_" + value).html("n/a" + "<br />" + "0.00%");
+                    };
+
+                    // draw the initial charts
+                    $("div#people_" + value).html(data.length);
+                    var height = "height: " + percentify(data.length / 100) + "%"
+                    $("li#people_" + value).attr("style", height);
+
                 });
             } else {
                 this.view_object.people_years.forEach(function(item, index, list){
-                    var has_year_data = _.has(obj.init.yearly_people, item);
+                    var has_year_data = _.has(obj.yearly, item);
                     if (has_year_data === false){
-                        obj.init.yearly_people[item] = [];
-                    }
-                });
-                _.keys(obj.init.yearly_people).forEach(function(value){
-                    var data = obj.init.yearly_people[value];
-                    if (data.length > 0){
-                        $("td#people_" + value).html(data.length + " / " + obj.init.people.length + "<br />" + percentify(data.length / obj.init.people.length) + "%");
-                        $("td#people_" + value).css({color: "black"});
-                        // $("div#people_" + value).html(data.length);
-                        // $("li#people_" + value).attr("style", "height: " + percentify(data.length / 100) + "%");
-                    } else {
-                        $("td#people_" + value).html("n/a" + "<br />" + "0.00%");
-                        $("td#people_" + value).css({color: "rgba(0, 0, 0, 0.3)"});
-                        // $("div#people_" + value).html(data.length);
-                        // $("li#people_" + value).attr("style", "height: " + percentify(data.length / 100) + "%");
+                        obj.yearly[item] = [];
                     };
                 });
-            };
-        },
+                _.keys(obj.yearly).forEach(function(value){
+                    var data = obj.yearly[value];
+                    if (data.length > 0){
+                        $("td#people_" + value).html(data.length + " / " + total + "<br />" + percentify(data.length / total) + "%");
+                    } else {
+                        $("td#people_" + value).html("n/a" + "<br />" + "0.00%");
+                    };
 
-        chart_filtered_data: function(obj){
-            if (obj.filtered.people.length > 0){
-                $("td#filtered-people").html(obj.filtered.people.length + " / " + obj.init.people.length + "<br />" + percentify(obj.filtered.people.length / obj.init.people.length) + "%");
-                $("td#filtered-people").css({color: "red"});
-            } else {
-                $("td#filtered-people").html("n/a" + "<br />" + "0.00%");
-                $("td#filtered-people").css({color: "rgba(0, 0, 0, 0.3)"});
-            };
-            var is_empty = _.isEmpty(obj.filtered.yearly_people);
-            if (is_empty === true){
-                _.keys(obj.init.yearly_people).forEach(function(value){
-                    $("td#people_" + value).html("n/a" + "<br />" + "0.00%");
-                    $("td#people_" + value).css({color: "rgba(0, 0, 0, 0.3)"});
-                });
-            } else {
-                this.view_object.people_years.forEach(function(item, index, list){
-                    var has_year_data = _.has(obj.filtered.yearly_people, item);
-                    if (has_year_data === false){
-                        obj.filtered.yearly_people[item] = [];
-                    }
-                });
-                _.keys(obj.filtered.yearly_people).forEach(function(value){
-                    var data = obj.filtered.yearly_people[value];
-                    if (data.length > 0){
-                        $("td#people_" + value).html(data.length + " / " + obj.filtered.people.length + "<br />" + percentify(data.length / obj.filtered.people.length) + "%");
-                        $("td#people_" + value).css({color: "red"});
-                        // $("div#people_" + value).html(data.length);
-                        // $("li#people_" + value).attr("style", "height: " + percentify(data.length / 100) + "%");
-                    } else {
-                        $("td#people_" + value).html("n/a" + "<br />" + "0.00%");
-                        $("td#people_" + value).css({color: "rgba(0, 0, 0, 0.3)"});
-                        // $("div#people_" + value).html(data.length);
-                        // $("li#people_" + value).attr("style", "height: " + percentify(data.length / 100) + "%");
-                    };
+                    // draw the filtered charts
+                    $("div#people_" + value).html(data.length);
+                    var height = "height: " + percentify(data.length / 100) + "%"
+                    $("li#people_" + value).attr("style", height);
+
                 });
             };
         },
 
         construct_filtered_data: function(){
-            this.view_object.obj.active_checkboxes = get_selected_filters();
+            this.view_object.obj.active_checkboxes = this.get_selected_filters();
+
             var incident_filters = {};
             _.each(this.view_object.obj.active_checkboxes.incidents, function(item, index, list){
                 return incident_filters[item] = true;
             });
+
             var people_filters = {};
             _.each(this.view_object.obj.active_checkboxes.peoples, function(item, index, list){
                 return people_filters[item] = true;
             });
-            var all_filters = _.extend(incident_filters, people_filters);
-            this.view_object.obj.filtered.people = new App.Collections.Peoples(
-                this.view_object.obj.init.people.where(all_filters)
-            );
-            this.view_object.obj.filtered.yearly_people = create_groups(this.view_object.obj.filtered.people, "year_of_incident");
-            // var case_ids = this.view_object.obj.filtered.people.pluck("district_attorney_file_number");
-            // this.view_object.obj.filtered.incidents = new App.Collections.Incidents();
-            // this.view_object.obj.filtered.incidents
-            //     .add(this.view_object.obj.init.incidents.models
-            //          .filter(function(model){
-            //             return case_ids.indexOf(model.attributes.district_attorney_file_number) !== -1;
-            //         })
-            //     );
-            // this.view_object.obj.filtered.yearly_incident = create_groups(this.view_object.obj.filtered.incidents, "year_of_incident");
+
+            this.view_object.obj.filtered.people = new App.Collections.Peoples();
+
+            var people_filters_empty = _.isEmpty(people_filters);
+
+            var incident_filters_empty = _.isEmpty(incident_filters);
+
+            if (people_filters_empty === true && incident_filters_empty === true){
+                console.log("empty");
+            } else if (people_filters_empty === false && incident_filters_empty === true){
+                this.view_object.obj.filtered.people.add(this.view_object.obj.init.people.where(people_filters));
+            } else if (people_filters_empty === true && incident_filters_empty === false){
+                var people_via_incidents = new App.Collections.Incidents(
+                    this.view_object.relevant_incidents.where(incident_filters)
+                );
+                this.view_object.obj.filtered.people.add(people_via_incidents.models);
+            } else if (people_filters_empty === false && incident_filters_empty === false){
+                var a = this.view_object.obj.init.people.where(people_filters);
+                var b = this.view_object.relevant_incidents.where(incident_filters);
+
+                // array for case ids where filter is true
+                var case_ids = [];
+
+                // get case ids where the incident is true
+                b.forEach(function(model, index){
+                    var _this = model.attributes;
+                    case_ids.push(_this.district_attorney_file_number);
+                });
+
+                // get the incident filters to assign to people as boolean
+                var incident_filters_to_assign = _.keys(incident_filters);
+
+                // assign person model values for where the incident is true
+                a.forEach(function(model, index){
+                    var _this = model.attributes;
+                    var test = _.contains(case_ids, _this.district_attorney_file_number);
+                    if (test === true){
+                        incident_filters_to_assign.forEach(function(item, index){
+                            model.set(item, true);
+                        });
+                    } else {
+                        incident_filters_to_assign.forEach(function(item, index){
+                            model.set(item, false);
+                        });
+                    }
+                });
+
+                var selected_filters = _.extend(incident_filters, people_filters);
+
+                this.view_object.obj.filtered.people.add(this.view_object.obj.init.people.where(selected_filters));
+
+            };
+
+            this.view_object.obj.filtered.yearly = create_groups(this.view_object.obj.filtered.people, "year_of_incident");
+
             this.display_data(this.view_object.obj, false);
+
+        },
+
+        get_selected_filters: function(){
+            var filters = {};
+            filters.incidents = [];
+            filters.peoples = [];
+            $("input:radio").each(function(){
+                var $this = $(this);
+                if($this.is(":checked")){
+                    var filter_id = $this.attr("id");
+                    var filter_type = $this.attr("class");
+                    filters[filter_type].push(filter_id)
+                };
+            });
+            $("input:checkbox").each(function(){
+                var $this = $(this);
+                if($this.is(":checked")){
+                    var filter_id = $this.attr("id");
+                    var filter_type = $this.attr("class");
+                    filters[filter_type].push(filter_id)
+                }
+            });
+            return filters;
         },
 
         clear_checkbox_filters: function(){
