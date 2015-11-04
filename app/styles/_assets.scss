@@ -1,8 +1,7 @@
 .asset {
   margin: em($baseline * 2) 0;
 }
-  .asset--photo {
-  }
+  .asset--photo {}
   .asset--photo-right {
     float: right;
     margin: em($baseline) (grid-calc(2) * -1) em($baseline) em($baseline);
@@ -26,6 +25,18 @@
     .asset--photo__img {
       display: block;
       margin-bottom: em($baseline);
+    }
+    .asset--photo__widescreen-clip {
+      max-height: 544px;
+      overflow: hidden;
+      position: relative;
+      .asset--photo__img {
+        display: block;
+        max-width: 100%;
+        height: auto !important;
+        width: auto\9;
+        -ms-interpolation-mode: bicubic; 
+      }
     }
     .asset--photo__description {
       display: block;
