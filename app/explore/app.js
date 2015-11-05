@@ -163,30 +163,40 @@
             this.view_object.filters = [{
                 type: "incidents",
                 proper: "Incident",
-                radio_buttons: [],
+                radio_buttons: [
+                    // {
+                    //     field_name: "lethal_force_first",
+                    //     buttons: [
+                    //         {opt: "Lethal Force First", opt_field: "lethal_force_as_first_calc"},
+                    //         {opt: "Non-Lethal Force First", opt_field: "other_force_as_first_calc"},
+                    //     ]
+                    // }
+                ],
                 checkboxes: [
                     {opt: "Officer Defense Of Civillians", opt_field: "officer_defense_of_civillians"},
                     {opt: "Car Stop", opt_field: "car_stop"},
                 ]}, {
                 type: "peoples",
                 proper: "Person",
-                radio_buttons: [{
-                    field_name: "fatal_non",
-                    buttons: [
-                        {opt: "Fatal", opt_field: "fatal"},
-                        {opt: "Non-fatal", opt_field: "nonfatal_calc"},
-                    ]}, {
-                    field_name: "armed_non",
-                    buttons: [
-                        {opt: "Unarmed", opt_field: "person_unarmed"},
-                        {opt: "Firearm", opt_field: "armed_with_firearm_calc"},
-                        {opt: "Other Weapon", opt_field: "armed_with_other_calc"},
-                    ]}, {
-                    field_name: "gender",
-                    buttons: [
-                        {opt: "Female", opt_field: "person_female"},
-                        {opt: "Male", opt_field: "person_male"},
-                    ]}
+                radio_buttons: [
+                    {
+                        field_name: "fatal_non",
+                        buttons: [
+                            {opt: "Fatal", opt_field: "fatal"},
+                            {opt: "Non-fatal", opt_field: "nonfatal_calc"},
+                        ]}, {
+                        field_name: "armed_non",
+                        buttons: [
+                            {opt: "Unarmed", opt_field: "person_unarmed"},
+                            {opt: "Firearm", opt_field: "armed_with_firearm_calc"},
+                            {opt: "Other Weapon", opt_field: "armed_with_other_calc"},
+                        ]}, {
+                        field_name: "gender",
+                        buttons: [
+                            {opt: "Female", opt_field: "person_female"},
+                            {opt: "Male", opt_field: "person_male"},
+                        ]
+                    }
                 ],
                 checkboxes: [
                     {opt: "Officer Said Person Reached for Waistband", opt_field: "mention_of_waistband_in_report"},
@@ -238,6 +248,16 @@
             view_object.relevant_incidents.forEach(function(model, index){
                 var _this = model.attributes;
                 model.set("year_of_incident", parse_year(_this.date_of_incident));
+
+                // var type_of_incident_position = _this.type_of_incident.indexOf("Shooting");
+                // if (type_of_incident_position === 0){
+                //     model.set("lethal_force_as_first_calc", true);
+                //     model.set("other_force_as_first_calc", false);
+                // } else {
+                //     model.set("lethal_force_as_first_calc", false);
+                //     model.set("other_force_as_first_calc", true);
+                // };
+
             });
             view_object.people_years = _.uniq(view_object.relevant_people.pluck("year_of_incident")).sort();
             view_object.genders = _.uniq(view_object.genders).sort();
