@@ -86,20 +86,24 @@
   border: 1px solid #8eb5ff;
 }
 
+.radio, .checkbox {
+    margin: 30px 0 30px 0;
+}
+
 label{
     border: 1px solid #ffffff;
     padding: 10px;
-    position:relative;
-    cursor:pointer;
+    position: relative;
+    cursor: pointer;
 }
 
 label [type="radio"], label [type="checkbox"]{
-    display:none;
+    display: none;
 }
 
 [type="radio"] + span, [type="checkbox"] + span{
-    display:inline-block;
-    padding:1em;
+    display: inline-block;
+    padding: 1em;
 }
 
 :checked + span{

@@ -86,7 +86,7 @@
                         <form role="form" class="form-inline">
                             <h5><@= filters[0].proper @></h5>
                             <@ _.each(filters[0].radio_buttons, function(item){ @>
-                                <div class="radio col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                <div class="radio">
                                     <@ _.each(item.buttons, function(button){ @>
                                         <label class="radio-inline" for="<@= button.opt_field @>">
                                             <input type="radio" class="<@= filters[0].type @>" id="<@= button.opt_field @>" name="<@= item.field_name @>" value="<@= button.opt @>"> <@= button.opt @>
@@ -96,7 +96,7 @@
                                 </div>
                             <@ }); @>
                             <@ _.each(filters[0].checkboxes, function(item){ @>
-                                <div class="checkbox col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                <div class="checkbox">
                                     <label class="checkbox-inline" for="<@= item.opt_field @>">
                                         <input type="checkbox" class="<@= filters[0].type @>" id="<@= item.opt_field @>" value="<@= item.opt_field @>"> <@= item.opt @>
                                     </label>
@@ -111,7 +111,7 @@
                         <form role="form" class="form-inline">
                             <h5><@= filters[1].proper @></h5>
                             <@ _.each(filters[1].radio_buttons, function(item){ @>
-                                <div class="radio col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                <div class="radio">
                                     <@ _.each(item.buttons, function(button){ @>
                                         <label class="radio-inline" for="<@= button.opt_field @>">
                                             <input type="radio" class="<@= filters[1].type @>" id="<@= button.opt_field @>" name="<@= item.field_name @>" value="<@= button.opt @>">
@@ -121,7 +121,7 @@
                                 </div>
                             <@ }); @>
                             <@ _.each(filters[1].checkboxes, function(item){ @>
-                                <div class="checkbox col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                <div class="checkbox">
                                     <label class="checkbox-inline" for="<@= item.opt_field @>">
                                         <input type="checkbox" class="<@= filters[1].type @>" id="<@= item.opt_field @>" value="<@= item.opt_field @>"> <@= item.opt @>
                                     </label>
