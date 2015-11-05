@@ -43,7 +43,7 @@
   }
 }
 .chart .label {
-  background: #cccccc;
+  /*background: #cccccc;*/
   margin: -9px 0 71px 0;
 }
 .chart .percent {
@@ -82,6 +82,6 @@
   }
 }
 .chart .bar_chart {
-  background: #4ecdc4;
-  border: 1px solid #4ecdc4;
+  background: #8eb5ff;
+  border: 1px solid #8eb5ff;
 }
