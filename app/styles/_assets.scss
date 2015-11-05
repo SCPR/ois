@@ -112,6 +112,9 @@
         background-position: 29px 13px;
         width: 80px;
       }
+      .asset--audio:hover & {
+        background-color: $blue-cobalt;
+      }
     }
     .asset--audio__title {
       color: $white;
