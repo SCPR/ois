@@ -89,7 +89,8 @@
                                 <div class="radio col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <@ _.each(item.buttons, function(button){ @>
                                         <label class="radio-inline" for="<@= button.opt_field @>">
-                                        <input type="radio" class="<@= filters[0].type @>" id="<@= button.opt_field @>" name="<@= item.field_name @>" value="<@= button.opt @>"> <@= button.opt @>
+                                            <input type="radio" class="<@= filters[0].type @>" id="<@= button.opt_field @>" name="<@= item.field_name @>" value="<@= button.opt @>"> <@= button.opt @>
+                                            <span><@= button.opt @></span>
                                         </label>
                                     <@ }); @>
                                 </div>
@@ -98,7 +99,6 @@
                                 <div class="checkbox col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <label class="checkbox-inline" for="<@= item.opt_field @>">
                                         <input type="checkbox" class="<@= filters[0].type @>" id="<@= item.opt_field @>" value="<@= item.opt_field @>"> <@= item.opt @>
-                                        <span><@= button.opt @></span>
                                     </label>
                                 </div>
                             <@ }); @>

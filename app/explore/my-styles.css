@@ -85,3 +85,28 @@
   background: #8eb5ff;
   border: 1px solid #8eb5ff;
 }
+
+label{
+    border: 1px solid #ffffff;
+    padding: 10px;
+    position:relative;
+    cursor:pointer;
+}
+
+label [type="radio"], label [type="checkbox"]{
+    display:none;
+}
+
+[type="radio"] + span, [type="checkbox"] + span{
+    display:inline-block;
+    padding:1em;
+}
+
+:checked + span{
+    background: #8eb5ff;
+    border: 1px solid #8eb5ff;
+}
+
+[type="radio"][disabled] + span, [type="checkbox"][disabled] + span{
+    background: #f00;
+}​
