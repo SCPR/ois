@@ -283,6 +283,9 @@
         },
 
         display_data: function(obj, initial){
+
+            // $(".data-display input[type='radio']").hide();
+
             $("td#relevant-people").html(this.view_object.obj.total);
             if (initial === true){
                 this.chart_data(obj.init, this.view_object.obj.total);
