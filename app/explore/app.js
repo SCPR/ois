@@ -130,7 +130,7 @@
             this.applicationVisuals = new App.Views.ApplicationVisuals({
                 total_incidents: incidents,
                 total_peoples: peoples,
-                container: ".data-filters"
+                container: ".data-display"
             });
             return this.applicationVisuals;
         },
@@ -138,7 +138,7 @@
 
     App.Views.ApplicationVisuals = Backbone.View.extend({
 
-        el: ".data-filters",
+        el: ".data-display",
 
         initialize: function(object){
 
