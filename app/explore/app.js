@@ -181,17 +181,20 @@
                 radio_buttons: [
                     {
                         field_name: "fatal_non",
+                        group_name: "Outcome",
                         buttons: [
                             {opt: "Fatal", opt_field: "fatal"},
                             {opt: "Non-fatal", opt_field: "nonfatal_calc"},
                         ]}, {
                         field_name: "armed_non",
+                        group_name: "Weapon",
                         buttons: [
                             {opt: "Unarmed", opt_field: "person_unarmed"},
                             {opt: "Firearm", opt_field: "armed_with_firearm_calc"},
                             {opt: "Other Weapon", opt_field: "armed_with_other_calc"},
                         ]}, {
                         field_name: "gender",
+                        group_name: "Gender",
                         buttons: [
                             {opt: "Female", opt_field: "person_female"},
                             {opt: "Male", opt_field: "person_male"},
