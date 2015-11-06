@@ -71,24 +71,27 @@
         <!-- holds first item in array of filters -->
         <div id="<@= filters[0].type @>">
           <form role="form" class="form-inline">
-            <legend class="form__legend"><@= filters[0].proper @></legend>
-            <@ _.each(filters[0].radio_buttons, function(item){ @>
-              <div class="radio">
-                <@ _.each(item.buttons, function(button){ @>
-                  <label class="radio-inline" for="<@= button.opt_field @>">
-                    <input type="radio" class="<@= filters[0].type @>" id="<@= button.opt_field @>" name="<@= item.field_name @>" value="<@= button.opt @>"> <@= button.opt @>
-                    <span><@= button.opt @></span>
+            <fieldset>
+              <legend class="form__legend"><@= filters[0].proper @></legend>
+              <@ _.each(filters[0].radio_buttons, function(item){ @>
+                <div class="radio">
+                  <@ _.each(item.buttons, function(button){ @>
+                    <label class="radio-inline" for="<@= button.opt_field @>">
+                      <input type="radio" class="<@= filters[0].type @>" id="<@= button.opt_field @>" name="<@= item.field_name @>" value="<@= button.opt @>"> <@= button.opt @>
+                      <span><@= button.opt @></span>
+                    </label>
+                    <@ }); @>
+                </div>
+                <@ }); @>
+              <@ _.each(filters[0].checkboxes, function(item){ @>
+                <div class="checkbox">
+                  <label class="checkbox-inline" for="<@= item.opt_field @>">
+                    <input type="checkbox" class="<@= filters[0].type @>" id="<@= item.opt_field @>" value="<@= item.opt_field @>">
+                    <span><@= item.opt @></span>
                   </label>
-                  <@ }); @>
-              </div>
-              <@ }); @>
-            <@ _.each(filters[0].checkboxes, function(item){ @>
-              <div class="checkbox">
-                <label class="checkbox-inline" for="<@= item.opt_field @>">
-                  <input type="checkbox" class="<@= filters[0].type @>" id="<@= item.opt_field @>" value="<@= item.opt_field @>"> <@= item.opt @>
-                </label>
-              </div>
-              <@ }); @>
+                </div>
+                <@ }); @>
+            </fieldset>
           </form>
         </div>
         <!-- end holds first item in array of filters -->
@@ -96,24 +99,27 @@
         <!-- begin holds second item in array of filters -->
         <div id="<@= filters[1].type @>">
           <form role="form" class="form-inline">
-            <legend class="form__legend"><@= filters[1].proper @></legend>
-            <@ _.each(filters[1].radio_buttons, function(item){ @>
-              <div class="radio">
-                <@ _.each(item.buttons, function(button){ @>
-                  <label class="radio-inline" for="<@= button.opt_field @>">
-                    <input type="radio" class="<@= filters[1].type @>" id="<@= button.opt_field @>" name="<@= item.field_name @>" value="<@= button.opt @>">
-                    <span><@= button.opt @></span>
+            <fieldset>
+              <legend class="form__legend"><@= filters[1].proper @></legend>
+              <@ _.each(filters[1].radio_buttons, function(item){ @>
+                <div class="radio">
+                  <@ _.each(item.buttons, function(button){ @>
+                    <label class="radio-inline" for="<@= button.opt_field @>">
+                      <input type="radio" class="<@= filters[1].type @>" id="<@= button.opt_field @>" name="<@= item.field_name @>" value="<@= button.opt @>">
+                      <span><@= button.opt @></span>
+                    </label>
+                    <@ }); @>
+                </div>
+                <@ }); @>
+              <@ _.each(filters[1].checkboxes, function(item){ @>
+                <div class="checkbox">
+                  <label class="checkbox-inline" for="<@= item.opt_field @>">
+                    <input type="checkbox" class="<@= filters[1].type @>" id="<@= item.opt_field @>" value="<@= item.opt_field @>">
+                    <span><@= item.opt @></span>
                   </label>
-                  <@ }); @>
-              </div>
-              <@ }); @>
-            <@ _.each(filters[1].checkboxes, function(item){ @>
-              <div class="checkbox">
-                <label class="checkbox-inline" for="<@= item.opt_field @>">
-                  <input type="checkbox" class="<@= filters[1].type @>" id="<@= item.opt_field @>" value="<@= item.opt_field @>"> <@= item.opt @>
-                </label>
-              </div>
-              <@ }); @>
+                </div>
+                <@ }); @>
+            </fieldset>
           </form>
         </div>
         <!-- end holds second item in array of filters -->

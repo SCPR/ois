@@ -5,9 +5,14 @@
 
 label{
     border: 1px solid #ffffff;
-    padding: 10px;
+    border-radius: 3px;
+    padding: 6px 10px;
     position: relative;
     cursor: pointer;
+    span {
+      font-family: $font-sans;
+      font-size: em(16);
+    }
 }
 
 label [type="radio"], label [type="checkbox"]{
