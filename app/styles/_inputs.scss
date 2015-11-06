@@ -1,1 +1,25 @@
 // styling for form inputs
+.radio, .checkbox {
+    margin: 30px 0 30px 0;
+}
+
+label{
+    border: 1px solid #ffffff;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+label [type="radio"], label [type="checkbox"]{
+    display: none;
+}
+
+[type="radio"] + span, [type="checkbox"] + span{
+    display: inline-block;
+    padding: 1em;
+}
+
+:checked + span{
+    background: #8eb5ff;
+    border: 1px solid #8eb5ff;
+}
