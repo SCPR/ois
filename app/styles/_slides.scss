@@ -33,9 +33,24 @@
     transition-delay: 0.2s;
   }
 }
+.slide__side-by-side {
+  @include clearfix();
+  padding-top: em($baseline);
+}
+  .slide__side--left {
+    float: left;
+    width: 68%;
+  }
+  .slide__side--right {
+    float: right;
+    margin-left: 5%;
+  }
 .slide__img {
   margin-top: 18px;
 }
+  .slide__img--number {
+    margin-bottom: 10px;
+  }
 .slide__sharing {
   position: absolute;
   right: 32px;
