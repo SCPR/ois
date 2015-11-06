@@ -1,8 +1,7 @@
 .asset {
   margin: em($baseline * 2) 0;
 }
-  .asset--photo {
-  }
+  .asset--photo {}
   .asset--photo-right {
     float: right;
     margin: em($baseline) (grid-calc(2) * -1) em($baseline) em($baseline);
@@ -26,6 +25,19 @@
     .asset--photo__img {
       display: block;
       margin-bottom: em($baseline);
+    }
+    .asset--photo__widescreen-clip {
+      margin-bottom: em($baseline);
+      max-height: 544px;
+      overflow: hidden;
+      position: relative;
+      .asset--photo__img {
+        display: block;
+        max-width: 100%;
+        height: auto !important;
+        width: auto\9;
+        -ms-interpolation-mode: bicubic; 
+      }
     }
     .asset--photo__description {
       display: block;
@@ -99,6 +111,9 @@
       @media (max-width: 700px) {
         background-position: 29px 13px;
         width: 80px;
+      }
+      .asset--audio:hover & {
+        background-color: $blue-cobalt;
       }
     }
     .asset--audio__title {

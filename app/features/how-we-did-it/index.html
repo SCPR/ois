@@ -25,7 +25,7 @@
   </head>
   <body class="theme--light typography--feature">
 
-  <header class="header header--light">
+  <header class="header header--light header--top">
     <div class="header__branding">
       <img src="../../images/logo_kpcc-black.svg" alt="89.3 KPCC">
       <span class="header__pipe"></span>
@@ -119,7 +119,7 @@
       <h1 class="headline headline--dark">How we did it</h1>
     </div>
     <div class="bound bound--story align--center">
-      <p class="byline">Published April 5, 2015 by <a href="#" class="byline__link">Chris Keller</a></p>
+      <p class="byline">Published November 10, 2015 by <a href="#" class="byline__link">Chris Keller</a></p>
       <ul class="share-story">
         <li class="share-story__item">
           <a href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fprojects.scpr.org%2Fofficer-involved%2Ffeatures%2Fhow-we-did-it%2F">
@@ -137,7 +137,7 @@
       <hr class="rule rule--dark">
     </div>
     <div class="bound bound--story-wide align--center">
-      <p class="story-body__inagural">As KPCC set out to analyze how often on-duty police officers and sheriff's deputies in Los Angeles County shot another person, one thing became clear:  This isn't data you can simply lookup.</p>
+      <p class="story-body__inagural">As KPCC set out to analyze how often on-duty police officers and sheriff's deputies in Los Angeles County shot another person, one thing became clear:  This isn't data you can simply&nbsp;lookup.</p>
     </div>
     <div class="bound bound--story">
       <p class="story-body">Most data on police shootings is scattered, focused on fatal shootings when it’s available at all and even then rarely contains the level of detail we were looking for: How often do police shoot people who are unarmed? How often do shootings occur after pursuits? Why did officers feel they had to use deadly force?</p>
@@ -208,12 +208,99 @@
     </aside>
   </article>
 
+  <header class="header header--light header--solid header--fixed">
+    <div class="header__branding">
+      <img src="../../images/logo_kpcc-black.svg" alt="89.3 KPCC">
+      <span class="header__pipe"></span>
+      <h3 class="header__series-title">Officer Involved</h3>
+    </div>
+    <div class="header__menu">
+      <button class="menu__link" data-toggle="drawer-top" data-target="#seriesMenu">
+        <img src="../../images/icon_plus.svg" class="icon icon--left">
+        <span>Explore</span>
+      </button>
+    </div>
+  </header>
+  <nav class="drawer drawer--light drawer--top" id="seriesMenu">
+    <ul class="media-list media-list__flex">
+      <li class="media-list__item">
+        <h4 class="media-list__heading">Series Overview</h4>
+        <div class="media">
+          <a href="#">
+            <img src="http://placehold.it/420x120" class="media__image">
+            <div class="media__content">
+              <h3 class="media__title">Officer Involved: An Introduction</h3>
+            </div>
+          </a>
+        </div>
+      </li>
+      <li class="media-list__item">
+        <h4 class="media-list__heading">Interactive</h4>
+        <div class="media">
+          <a href="#">
+            <img src="http://placehold.it/420x120" class="media__image">
+            <div class="media__content">
+              <h3 class="media__title">Explore the Data</h3>
+            </div>
+          </a>
+        </div>
+      </li>
+      <li class="media-list__item">
+        <h4 class="media-list__heading">Features</h4>
+        <div class="media">
+          <a href="#">
+            <img src="http://placehold.it/420x120" class="media__image">
+            <div class="media__content">
+              <h3 class="media__title">Unarmed and Dangerous?</h3>
+            </div>
+          </a>
+        </div>
+      </li>
+      <li class="media-list__item">
+        <h4 class="media-list__heading">&nbsp;</h4>
+        <div class="media">
+          <a href="#">
+            <img src="http://placehold.it/420x120" class="media__image">
+            <div class="media__content">
+              <h3 class="media__title">Mental Illness</h3>
+            </div>
+          </a>
+        </div>
+      </li>
+      <li class="media-list__item">
+        <h4 class="media-list__heading">&nbsp;</h4>
+        <div class="media">
+          <a href="#">
+            <img src="http://placehold.it/420x120" class="media__image">
+            <div class="media__content">
+              <h3 class="media__title">Hero Cops</h3>
+            </div>
+          </a>
+        </div>
+      </li>
+      <li class="media-list__item">
+        <h4 class="media-list__heading">&nbsp;</h4>
+        <div class="media">
+          <a href="#">
+            <img src="http://placehold.it/420x120" class="media__image">
+            <div class="media__content">
+              <h3 class="media__title">Secrecy/Transparency</h3>
+            </div>
+          </a>
+        </div>
+      </li>
+    </ul>
+    <button class="drawer--top__close" data-toggle="drawer-top" data-target="#seriesMenu">
+      <img src="../../images/ctrl_close-large.svg" alt="Close">
+      <span>Close</span>
+    </button>
+  </nav>
+
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../../bower_components/jquery/dist/jquery.js"></script>
-    <script src="../../bower_components/fullpage.js/jquery.fullPage.js"></script>
-    <script src="../../bower_components/fullpage.js/vendors/jquery.easings.min.js"></script>
-    <script src="../../bower_components/fullpage.js/vendors/jquery.slimscroll.min.js"></script>
+    <script src="../../bower_components/waypoints/lib/jquery.waypoints.js"></script>
+    <script src="../../bower_components/waypoints/lib/shortcuts/inview.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -227,8 +314,8 @@
       ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
 
-        <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="../../scripts/main.js"></script>
+        <!-- build:js({app,.tmp}) scripts/features.js -->
+        <script src="../../scripts/features.js"></script>
         <!-- endbuild -->
 </body>
 </html>

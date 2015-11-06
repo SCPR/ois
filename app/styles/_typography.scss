@@ -82,8 +82,8 @@
   }
   .headline {
     font-family: $font-serif;
-    font-size: em(84);
-    font-weight: 400;
+    font-size: em(64);
+    font-weight: 300;
     line-height: em(108, 84);
     margin: 0 auto;
   }
@@ -95,7 +95,6 @@
     }
     .headline--giant {
       font-size: em(119);
-      font-weight: 300;
       line-height: em(128, 119);
       @media (max-width: 800px) {
         font-size: em(81);
