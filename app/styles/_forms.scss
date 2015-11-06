@@ -1,1 +1,8 @@
 // base form styling
+.form__legend {
+  color: $blue-muted;
+  font-family: $font-sans;
+  font-size: em(16);
+  font-weight: 600;
+  text-transform: uppercase;
+}

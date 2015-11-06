@@ -71,7 +71,7 @@
         <!-- holds first item in array of filters -->
         <div id="<@= filters[0].type @>">
           <form role="form" class="form-inline">
-            <h5><@= filters[0].proper @></h5>
+            <legend class="form__legend"><@= filters[0].proper @></legend>
             <@ _.each(filters[0].radio_buttons, function(item){ @>
               <div class="radio">
                 <@ _.each(item.buttons, function(button){ @>
@@ -96,7 +96,7 @@
         <!-- begin holds second item in array of filters -->
         <div id="<@= filters[1].type @>">
           <form role="form" class="form-inline">
-            <h5><@= filters[1].proper @></h5>
+            <legend class="form__legend"><@= filters[1].proper @></legend>
             <@ _.each(filters[1].radio_buttons, function(item){ @>
               <div class="radio">
                 <@ _.each(item.buttons, function(button){ @>

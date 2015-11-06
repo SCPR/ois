@@ -48,14 +48,14 @@
   opacity: 0.4;
 }
 .chart .percent {
-  font-family: $font-sans;
+  font-family: $font-sans-alt;
   font-size: em(30);
-  font-weight: 400;
+  font-weight: 300;
   opacity: .4;
   width: 100%;
   @media (min-width: 700px) {
     position: absolute;
-    top: -75px;
+    top: -68px;
     font-size: em(56);
   }
 }

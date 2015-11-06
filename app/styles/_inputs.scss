@@ -16,7 +16,6 @@ label [type="radio"], label [type="checkbox"]{
 
 [type="radio"] + span, [type="checkbox"] + span{
     display: inline-block;
-    padding: 1em;
 }
 
 :checked + span{
