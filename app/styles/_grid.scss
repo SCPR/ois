@@ -1,5 +1,6 @@
 // Bounding blocks to contain content
 .bound {
+  @include clearfix();
   margin: 0 auto;
   max-width: em(1040px);
 }
@@ -16,6 +17,20 @@
   .bound--singlecol-small {
     max-width: em(660px);
   }
+  // Floats for simple single column layouts
+  .singlecol__one-fourth {
+    float:left;
+    width: 25%;
+  }
+  .singlecol__half {
+    float: left;
+    width: 50%;
+  }
+  .singlecol__three-fourths {
+    float: left;
+    width: 75%;
+  }
+
   // Bounding blocks for story layouts
   .bound--story {
     max-width: grid-calc(5);

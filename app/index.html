@@ -45,81 +45,128 @@
         <span>More</span>
       </button>
     </div>
-    <nav class="drawer drawer--dark drawer--top" id="seriesMenu">
-      <ul class="media-list media-list__flex">
-        <li class="media-list__item">
-          <h4 class="media-list__heading">Series Overview</h4>
-          <div class="media">
-            <a href="#">
-              <img src="http://placehold.it/420x120" class="media__image">
+  </header>
+  <nav class="drawer drawer--dark drawer--top drawer--flex" id="seriesMenu">
+    <div class="header header--dark">
+      <div class="header__branding">
+        <img src="../../images/logo_kpcc-white.svg" alt="89.3 KPCC">
+        <span class="header__pipe"></span>
+        <h3 class="header__series-title">Officer Involved</h3>
+      </div>
+      <div class="header__menu">
+        <button class="menu__link" data-toggle="drawer-top" data-target="#seriesMenu">
+          <img src="../../images/icon_close.svg" alt="Close">
+          <span>Close</span>
+        </button>
+      </div>
+    </div>
+    <div class="drawer__primary-container">
+      <ul class="media-list media-list--flex">
+        <li class="media-list__item media-list__item--thirds">
+          <h4 class="media-list__heading media-list__heading--dark">Read the Features</h4>
+          <div class="media media--dark media--grid-item">
+            <a href="features/unarmed-and-dangerous/" class="media__link">
+              <div class="media__image-container--cinema">
+                <img src="http://a.scpr.org/i/9cf3a7ba7b2ffd1ce88786806b8dcd6d/111193-wide.jpg" class="media__image image--gravity-center-top">
+              </div>
               <div class="media__content">
-                <h3 class="media__title">Officer Involved: An Introduction</h3>
+                <h3 class="media__title">Unarmed and Dangerous?</h3>
+                <p class="media__teaser">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
               </div>
             </a>
           </div>
         </li>
-        <li class="media-list__item">
-          <h4 class="media-list__heading">Interactive</h4>
-          <div class="media">
-            <a href="#">
-              <img src="http://placehold.it/420x120" class="media__image">
+        <li class="media-list__item media-list__item--thirds">
+          <h4 class="media-list__heading">&nbsp;</h4>
+          <div class="media media--dark media--grid-item">
+            <a href="features/a-call-for-help/" class="media__link">
+              <div class="media__image-container--cinema">
+                <img src="http://a.scpr.org/i/59fdeac8d27f0a2ba4dfdb0ee84155d1/113970-wide.jpg" class="media__image image--gravity-center-top">
+              </div>
+              <div class="media__content">
+                <h3 class="media__title">A Call for Help</h3>
+                <p class="media__teaser">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="media-list__item media-list__item--thirds">
+          <h4 class="media-list__heading">&nbsp;</h4>
+          <div class="media media--dark media--grid-item">
+            <a href="features/i-see-heroes/" class="media__link">
+              <div class="media__image-container--cinema">
+                <img src="http://a.scpr.org/i/2e2d8958b2fd7a8ff7d00b543ab8742c/114114-wide.jpg" class="media__image image--gravity-top">
+              </div>
+              <div class="media__content">
+                <h3 class="media__title">‘I See Heroes’</h3>
+                <p class="media__teaser">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="media-list__item media-list__item--thirds">
+          <div class="media media--dark media--grid-item">
+            <a href="features/race/" class="media__link">
+              <div class="media__image-container--cinema">
+                <img src="http://a.scpr.org/i/9cf3a7ba7b2ffd1ce88786806b8dcd6d/111193-wide.jpg" class="media__image image--gravity-center-top">
+              </div>
+              <div class="media__content">
+                <h3 class="media__title">Blacks shot at disproportionate rate</h3>
+                <p class="media__teaser">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="media-list__item media-list__item--thirds">
+          <div class="media media--dark media--grid-item">
+            <a href="features/the-black-box/" class="media__link">
+              <div class="media__image-container--cinema">
+                <img src="http://a.scpr.org/i/cc752cd44ba51473a6bcba83b135079f/62466-wide.jpg" class="media__image image--gravity-top">
+              </div>
+              <div class="media__content">
+                <h3 class="media__title">Police Shooting Investigations: The Black Box</h3>
+                <p class="media__teaser">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="media-list__item media-list__item--thirds"></li>
+      </ul>
+    </div>
+    <div class="drawer__secondary-container">
+      <h4 class="media-list__heading media-list__heading--dark">Learn More</h4>
+      <ul class="media-list media-list--stacked">
+        <li class="media-list__item media-list__item--full">
+          <div class="media media--dark media--visual-launchpad">
+            <a href="/" class="media__link">
+              <div class="media__image-container--widescreen">
+                <img src="http://a.scpr.org/i/1c1fd6dd6369c84c921d64858741179d/100794-wide.jpg" class="media__image image--gravity-center-top">
+              </div>
+              <div class="media__content">
+                <h3 class="media__title">Visual Story</h3>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="media-list__item media-list__item--full">
+          <div class="media media--dark media--visual-launchpad">
+            <a href="explore/" class="media__link">
+              <div class="media__image-container--widescreen">
+                <img src="http://a.scpr.org/i/dbaeac58f86d222bb860ce1938ee5aec/114232-wide.jpg" class="media__image image--gravity-center-top">
+              </div>
               <div class="media__content">
                 <h3 class="media__title">Explore the Data</h3>
               </div>
             </a>
           </div>
         </li>
-        <li class="media-list__item">
-          <h4 class="media-list__heading">Features</h4>
-          <div class="media">
-            <a href="#">
-              <img src="http://placehold.it/420x120" class="media__image">
-              <div class="media__content">
-                <h3 class="media__title">Unarmed and Dangerous?</h3>
-              </div>
-            </a>
-          </div>
-        </li>
-        <li class="media-list__item">
-          <h4 class="media-list__heading">&nbsp;</h4>
-          <div class="media">
-            <a href="#">
-              <img src="http://placehold.it/420x120" class="media__image">
-              <div class="media__content">
-                <h3 class="media__title">Mental Illness</h3>
-              </div>
-            </a>
-          </div>
-        </li>
-        <li class="media-list__item">
-          <h4 class="media-list__heading">&nbsp;</h4>
-          <div class="media">
-            <a href="#">
-              <img src="http://placehold.it/420x120" class="media__image">
-              <div class="media__content">
-                <h3 class="media__title">Hero Cops</h3>
-              </div>
-            </a>
-          </div>
-        </li>
-        <li class="media-list__item">
-          <h4 class="media-list__heading">&nbsp;</h4>
-          <div class="media">
-            <a href="#">
-              <img src="http://placehold.it/420x120" class="media__image">
-              <div class="media__content">
-                <h3 class="media__title">Secrecy/Transparency</h3>
-              </div>
-            </a>
-          </div>
+        <li class="media-list__item media-list__item--full">
+          <div><a href="../how-we-did-it/" class="media__link media__link--bold">How we did it</a></div>
+          <div><a href="http://www.scpr.org/issues/officerinvolved" class="media__link media__link--bold">See all coverage from the&nbsp;series</a></div>
         </li>
       </ul>
-      <button class="drawer--top__close" data-toggle="drawer-top" data-target="#seriesMenu">
-        <img src="images/ctrl_close-large.svg" alt="Close">
-        <span>Close</span>
-      </button>
-    </nav>
-  </header>
+    </div>
+  </nav>
   <div class="cover">
     <img src="images/bg_title-slide.jpg" class="slide__bg" id="bg-0">
     <img src="images/bg_orosco.jpg" class="slide__bg" id="bg-1">
@@ -172,7 +219,7 @@
 
     <section id="slide-1" class="section">
       <div class="bound bound--singlecol-wide">
-        <p class="copy copy--med">Between Jan. 1, 2010 and Dec. 31, 2014, Los Angeles County District Attorney records show at least <span class="copy--emphasis">375</span> people were shot by on-duty officers.</p>
+        <p class="copy copy--med">Between Jan. 1, 2010 and Dec. 31, 2014, Los Angeles County district attorney records show at least <span class="copy--emphasis">375</span> people were shot by on-duty officers.</p>
         <img src="images/img_total-incidents.png" class="slide__img" alt="359 Total Incidents reviewed by KPCC">
       </div>
     </section>
@@ -195,7 +242,7 @@
     <section id="slide-6" class="section">
       <div class="bound bound--singlecol-wide">
         <h3 class="heading heading--section">Armed vs. Unarmed</h3>
-        <p class="copy copy--med copy--flush-top">According to KPCC's analysis of district attorney records <span class="copy--emphasis">one in four</span> people shot by officers were unarmed.</p>
+        <p class="copy copy--med copy--flush-top">According to KPCC's analysis of district attorney records, <span class="copy--emphasis">one in four</span> people shot by officers were unarmed.</p>
         <img src="images/img_armed-vs-unarmed.png" alt="Armed vs. Unarmed incidents">
       </div>
     </section>
@@ -217,7 +264,7 @@
 
     <section id="slide-9" class="section">
       <div class="bound bound--singlecol-med">
-        <p class="copy copy--med">Law enforcement officers’ disciplinary records are secret under state law, so it’s impossible for the public to know how often officers and deputies in Los Angeles are disciplined or fired for shooting -- even when people are unarmed.</p>
+        <p class="copy copy--med">Law enforcement officers’ disciplinary records are secret under state law, so it’s impossible for the public to know how often officers and deputies in Los Angeles are disciplined or fired for shooting — even when people are unarmed.</p>
       </div>
     </section>
 
@@ -242,7 +289,7 @@
       <div class="bound bound--singlecol-full align--left">
         <div class="bound__push-right">
           <h3 class="heading heading--section">Unarmed and Dangerous?</h3>
-          <p class="copy copy--med">On June 16, 2010, a Los Angeles Sheriff’s Deputy investigating a 911 call of “shots fired” shot and killed Dexter Luckett.</p>
+          <p class="copy copy--med">On June 16, 2010, a Los Angeles sheriff’s deputy investigating a 911 call of “shots fired” shot and killed Dexter Luckett.</p>
           <p class="copy copy--med">Instead of putting his hands on the patrol car, Luckett set his beer on the hood and allegedly dropped his left hand toward his waistband.</p>
         </div>
       </div>
@@ -260,7 +307,7 @@
 
     <section id="slide-14" class="section">
       <div class="bound bound--singlecol-wide">
-        <p class="copy copy--med">Over the past five years, a KPCC review of medical examiner records found law enforcement officers in Los Angeles County fatally shot black people at nearly <span class="copy--emphasis">triple the rate</span> of whites and latinos.</p>
+        <p class="copy copy--med">Over the past five years, a KPCC review of medical examiner records found law enforcement officers in Los Angeles County fatally shot black people at <span class="copy--emphasis">triple the rate</span> of whites and Latinos.</p>
         <img src="images/img_ois-by-race.png" class="slide__img" alt="Incidents by Race">
       </div>
     </section>
@@ -298,7 +345,7 @@
         <div class="bound__push-left">
           <div class="spacer--14">&nbsp;</div>
           <p class="copy copy--med">He hit his target: The bullet had travelled through Mendoza’s eye and pierced his brain. He died on the spot.</p>
-          <p class="copy copy--med">Last month, Avendano stepped onto a stage where Chief Charlie Beck hung the LAPD’s medal of valor around his&nbsp;neck.</p>
+          <p class="copy copy--med">Last month, Avendano stepped onto a stage where Chief Charlie Beck hung the LAPD’s Medal of Valor around his&nbsp;neck.</p>
         </div>
       </div>
     </section>
@@ -324,7 +371,7 @@
       <div class="bound bound--singlecol-full align--left">
         <div class="bound__push-left">
           <div class="spacer--14">&nbsp;</div>
-          <p class="copy copy--med">On January 4, 2012, four L.A. County Sherriff’s Deputies responded to a call from a mental health and counseling facility in Rosemead.</p>
+          <p class="copy copy--med">On January 4, 2012, four L.A. County sheriff’s deputies responded to a call from a mental health and counseling facility in Rosemead.</p>
           <p class="copy copy--med">Jazmyne Eng, a 40 year-old patient, was inside the lobby, refusing to leave and holding a small, rounded&nbsp;hammer.</p>
           <p class="copy copy--med">A schizophrenic, Eng was off her medication and paranoid.</p>
         </div>
@@ -345,7 +392,7 @@
     <section id="slide-22" class="section">
       <div class="bound bound--singlecol-med align--center">
         <h3 class="heading heading--section">Explore the Data</h3>
-        <p class="copy copy--med">KPCC analyzed summaries of officer-involved shootings by the Los Angeles County District Attorney from 2010-2014. Explore the data by applying different&nbsp;filters.</p>
+        <p class="copy copy--med">KPCC analyzed summaries of officer-involved shootings by the Los Angeles County district attorney from 2010-2014. Explore the data by applying different&nbsp;filters.</p>
         <p class="copy copy--med">Explore the data KPCC gathered for this series, or read the first in-depth feature.</p>
         <p>
           <a class="button" href="#">Explore the Data</a>
@@ -379,6 +426,7 @@
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
+        <script src="scripts/sequential.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -177,79 +177,126 @@
       </button>
     </div>
   </header>
-  <nav class="drawer drawer--light drawer--top" id="seriesMenu">
-    <ul class="media-list media-list__flex">
-      <li class="media-list__item">
-        <h4 class="media-list__heading">Series Overview</h4>
-        <div class="media">
-          <a href="#">
-            <img src="http://placehold.it/420x120" class="media__image">
-            <div class="media__content">
-              <h3 class="media__title">Officer Involved: An Introduction</h3>
-            </div>
-          </a>
-        </div>
-      </li>
-      <li class="media-list__item">
-        <h4 class="media-list__heading">Interactive</h4>
-        <div class="media">
-          <a href="#">
-            <img src="http://placehold.it/420x120" class="media__image">
-            <div class="media__content">
-              <h3 class="media__title">Explore the Data</h3>
-            </div>
-          </a>
-        </div>
-      </li>
-      <li class="media-list__item">
-        <h4 class="media-list__heading">Features</h4>
-        <div class="media">
-          <a href="#">
-            <img src="http://placehold.it/420x120" class="media__image">
-            <div class="media__content">
-              <h3 class="media__title">Unarmed and Dangerous?</h3>
-            </div>
-          </a>
-        </div>
-      </li>
-      <li class="media-list__item">
-        <h4 class="media-list__heading">&nbsp;</h4>
-        <div class="media">
-          <a href="#">
-            <img src="http://placehold.it/420x120" class="media__image">
-            <div class="media__content">
-              <h3 class="media__title">Mental Illness</h3>
-            </div>
-          </a>
-        </div>
-      </li>
-      <li class="media-list__item">
-        <h4 class="media-list__heading">&nbsp;</h4>
-        <div class="media">
-          <a href="#">
-            <img src="http://placehold.it/420x120" class="media__image">
-            <div class="media__content">
-              <h3 class="media__title">Hero Cops</h3>
-            </div>
-          </a>
-        </div>
-      </li>
-      <li class="media-list__item">
-        <h4 class="media-list__heading">&nbsp;</h4>
-        <div class="media">
-          <a href="#">
-            <img src="http://placehold.it/420x120" class="media__image">
-            <div class="media__content">
-              <h3 class="media__title">Secrecy/Transparency</h3>
-            </div>
-          </a>
-        </div>
-      </li>
-    </ul>
-    <button class="drawer--top__close" data-toggle="drawer-top" data-target="#seriesMenu">
-      <img src="../../images/ctrl_close-large.svg" alt="Close">
-      <span>Close</span>
-    </button>
+  <nav class="drawer drawer--light drawer--top drawer--flex" id="seriesMenu">
+    <div class="header header--light">
+      <div class="header__branding">
+        <img src="../../images/logo_kpcc-black.svg" alt="89.3 KPCC">
+        <span class="header__pipe"></span>
+        <h3 class="header__series-title">Officer Involved</h3>
+      </div>
+      <div class="header__menu">
+        <button class="menu__link" data-toggle="drawer-top" data-target="#seriesMenu">
+          <img src="../../images/icon_close.svg" alt="Close">
+          <span>Close</span>
+        </button>
+      </div>
+    </div>
+    <div class="drawer__primary-container">
+      <ul class="media-list media-list--flex">
+        <li class="media-list__item media-list__item--thirds">
+          <h4 class="media-list__heading">Read the Features</h4>
+          <div class="media media--light media--grid-item">
+            <a href="../unarmed-and-dangerous/" class="media__link">
+              <div class="media__image-container--cinema">
+                <img src="http://a.scpr.org/i/9cf3a7ba7b2ffd1ce88786806b8dcd6d/111193-wide.jpg" class="media__image image--gravity-center-top">
+              </div>
+              <div class="media__content">
+                <h3 class="media__title">Unarmed and Dangerous?</h3>
+                <p class="media__teaser">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="media-list__item media-list__item--thirds">
+          <h4 class="media-list__heading">&nbsp;</h4>
+          <div class="media media--light media--grid-item">
+            <a href="../a-call-for-help/" class="media__link">
+              <div class="media__image-container--cinema">
+                <img src="http://a.scpr.org/i/59fdeac8d27f0a2ba4dfdb0ee84155d1/113970-wide.jpg" class="media__image image--gravity-center-top">
+              </div>
+              <div class="media__content">
+                <h3 class="media__title">A Call for Help</h3>
+                <p class="media__teaser">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="media-list__item media-list__item--thirds">
+          <h4 class="media-list__heading">&nbsp;</h4>
+          <div class="media media--light media--grid-item">
+            <a href="../i-see-heroes/" class="media__link">
+              <div class="media__image-container--cinema">
+                <img src="http://a.scpr.org/i/2e2d8958b2fd7a8ff7d00b543ab8742c/114114-wide.jpg" class="media__image image--gravity-top">
+              </div>
+              <div class="media__content">
+                <h3 class="media__title">‘I See Heroes’</h3>
+                <p class="media__teaser">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="media-list__item media-list__item--thirds">
+          <div class="media media--light media--grid-item">
+            <a href="../race/" class="media__link">
+              <div class="media__image-container--cinema">
+                <img src="http://a.scpr.org/i/9cf3a7ba7b2ffd1ce88786806b8dcd6d/111193-wide.jpg" class="media__image image--gravity-center-top">
+              </div>
+              <div class="media__content">
+                <h3 class="media__title">Blacks shot at disproportionate rate</h3>
+                <p class="media__teaser">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="media-list__item media-list__item--thirds">
+          <div class="media media--light media--grid-item">
+            <a href="../the-black-box/" class="media__link">
+              <div class="media__image-container--cinema">
+                <img src="http://a.scpr.org/i/cc752cd44ba51473a6bcba83b135079f/62466-wide.jpg" class="media__image image--gravity-top">
+              </div>
+              <div class="media__content">
+                <h3 class="media__title">Police Shooting Investigations: The Black Box</h3>
+                <p class="media__teaser">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="media-list__item media-list__item--thirds"></li>
+      </ul>
+    </div>
+    <div class="drawer__secondary-container">
+      <h4 class="media-list__heading">Learn More</h4>
+      <ul class="media-list media-list--stacked">
+        <li class="media-list__item media-list__item--full">
+          <div class="media media--light media--visual-launchpad">
+            <a href="../../" class="media__link">
+              <div class="media__image-container--widescreen">
+                <img src="http://a.scpr.org/i/1c1fd6dd6369c84c921d64858741179d/100794-wide.jpg" class="media__image image--gravity-center-top">
+              </div>
+              <div class="media__content">
+                <h3 class="media__title">Visual Story</h3>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="media-list__item media-list__item--full">
+          <div class="media media--light media--visual-launchpad">
+            <a href="../../explore/" class="media__link">
+              <div class="media__image-container--widescreen">
+                <img src="http://a.scpr.org/i/dbaeac58f86d222bb860ce1938ee5aec/114232-wide.jpg" class="media__image image--gravity-center-top">
+              </div>
+              <div class="media__content">
+                <h3 class="media__title">Explore the Data</h3>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="media-list__item media-list__item--full">
+          <div><a href="../how-we-did-it/" class="media__link media__link--bold">How we did it</a></div>
+          <div><a href="http://www.scpr.org/issues/officerinvolved" class="media__link media__link--bold">See all coverage from the&nbsp;series</a></div>
+        </li>
+      </ul>
+    </div>
   </nav>
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -271,6 +318,7 @@
     </script>
 
         <!-- build:js({app,.tmp}) scripts/features.js -->
+        <script src="../../scripts/main.js"></script>
         <script src="../../scripts/features.js"></script>
         <!-- endbuild -->
 </body>

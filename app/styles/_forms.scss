@@ -1,0 +1,17 @@
+// base form styling
+.form-inline {
+  @include clearfix();
+}
+.form__legend {
+  color: $blue-muted;
+  font-family: $font-sans;
+  font-size: em(16);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.form__group-name {
+  color: $white;
+  font-family: $font-sans;
+  font-size: em(16);
+  font-weight: 400;
+}
