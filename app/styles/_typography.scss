@@ -1,6 +1,6 @@
 // Type Styles for the Sequential Narrative
 .typography--sequential {
-  @media (max-width: em(1000)) and (max-height: em(1000)) {
+  @media (max-width: em(1000px)) {
     font-size: 14px;
   }
 

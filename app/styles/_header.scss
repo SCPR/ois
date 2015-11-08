@@ -5,6 +5,9 @@
   left: 0;
   right: 0;
   top: 0;
+  @media screen and (max-width: 768px) {
+    padding: 18px;
+  }
 }
   &.header--dark {
     color: $white;
@@ -70,6 +73,9 @@
     position: absolute;
     right: 32px;
     top: 16px;
+    @media screen and (max-width: 768px) {
+      right: 18px;
+    }
   }
     .menu__link {
       @include button-reset();
