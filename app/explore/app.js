@@ -296,8 +296,6 @@
 
         chart_data: function(obj, total){
 
-            console.log(total);
-
             // display the overall figures
             var people_empty = _.isEmpty(obj.people.models);
             if (people_empty === false){
@@ -355,25 +353,19 @@
 
         construct_filtered_data: function(){
             this.view_object.obj.active_checkboxes = this.get_selected_filters();
-
             var incident_filters = {};
             _.each(this.view_object.obj.active_checkboxes.incidents, function(item, index, list){
                 return incident_filters[item] = true;
             });
-
             var people_filters = {};
             _.each(this.view_object.obj.active_checkboxes.peoples, function(item, index, list){
                 return people_filters[item] = true;
             });
-
             this.view_object.obj.filtered.people = new App.Collections.Peoples();
-
             var people_filters_empty = _.isEmpty(people_filters);
-
             var incident_filters_empty = _.isEmpty(incident_filters);
-
             if (people_filters_empty === true && incident_filters_empty === true){
-                console.log("empty");
+                this.view_object.obj.filtered.people = this.view_object.obj.init.people;
             } else if (people_filters_empty === false && incident_filters_empty === true){
                 this.view_object.obj.filtered.people.add(this.view_object.obj.init.people.where(people_filters));
             } else if (people_filters_empty === true && incident_filters_empty === false){
@@ -411,17 +403,11 @@
                         });
                     }
                 });
-
                 var selected_filters = _.extend(incident_filters, people_filters);
-
                 this.view_object.obj.filtered.people.add(this.view_object.obj.init.people.where(selected_filters));
-
             };
-
             this.view_object.obj.filtered.yearly = create_groups(this.view_object.obj.filtered.people, "year_of_incident");
-
             this.display_data(this.view_object.obj, false);
-
         },
 
         get_selected_filters: function(){
