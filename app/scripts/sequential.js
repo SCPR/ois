@@ -13,6 +13,10 @@ $(document).ready(function() {
       anchors:['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22'],
 
       afterLoad: function(anchorLink, index){
+        // fire GA events when slides change
+        var slideValue = 'Slide #' + index
+        ga('send', 'event', 'ois', 'slideChange', slideValue);
+
         if(index === 1 || index === 2 || index === 20) {
           $('#bg-0').addClass('active');
         }

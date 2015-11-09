@@ -187,10 +187,10 @@
   </div>
   <aside class="slide__sharing">
     <span class="sharing__label">Share this</span>
-    <a href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fprojects.scpr.org%2Fofficer-involved" class="sharing__button button button--facebook">
+    <a href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fprojects.scpr.org%2Fofficer-involved" class="sharing__button button button--facebook" onClick="ga('send', 'event', 'ois', 'shareFacebook', 'Sequential');">
       <img src="images/icon_facebook.svg" alt="facebook">
     </a>
-    <a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fprojects.scpr.org%2Fofficer-involved" class="sharing__button button button--twitter">
+    <a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fprojects.scpr.org%2Fofficer-involved" class="sharing__button button button--twitter" onClick="ga('send', 'event', 'ois', 'shareTwitter', 'Sequential');">
       <img src="images/icon_twitter.svg" alt="twitter">
     </a>
   </aside>
@@ -423,8 +423,8 @@
         <p class="copy copy--med">KPCC analyzed summaries of officer-involved shootings by the Los Angeles County district attorney from 2010-2014. Explore the data by applying different&nbsp;filters.</p>
         <p class="copy copy--med">Explore the data KPCC gathered for this series, or read the first in-depth feature.</p>
         <p>
-          <a class="button" href="../../explore/">Explore the Data</a>
-          <a class="button" href="#">Read a Feature</a>
+          <a class="button" href="explore/" onClick="ga('send', 'event', 'ois', 'sequentialNextPath', 'Explore the Data');">Explore the Data</a>
+          <a class="button" href="features/unarmed-and-dangerous/" onClick="ga('send', 'event', 'ois', 'sequentialNextPath', 'Feature - Unarmed');">Read a Feature</a>
         </p>
       </div>
     </section>
@@ -444,15 +444,56 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
+    <!-- begin chartbeat -->
+        <script type="text/javascript">
+            var _sf_async_config = { uid: 33583, domain: 'projects.scpr.org', useCanonical:true };
+            (function() {
+                function loadChartbeat() {
+                    window._sf_endpt = (new Date()).getTime();
+                    var e = document.createElement('script');
+                    e.setAttribute('language', 'javascript');
+                    e.setAttribute('type', 'text/javascript');
+                    e.setAttribute('src','//static.chartbeat.com/js/chartbeat.js');
+                    document.body.appendChild(e);
+                };
+                var oldonload = window.onload;
+                window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() { oldonload(); loadChartbeat(); };
+            })();
+        </script>
+        <!-- end chartbeat -->
+        <!-- begin google analytics -->
+        <script type="text/javascript">
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            // tracker for scpr ga account
+            ga('create', 'UA-624724-1', 'auto', {'allowLinker': true});
+            // tracker for npr digital services station analytics
+            ga('create', 'UA-18188937-11', 'auto', {'name': 'nprDsTracker'}, {'allowLinker': true});
+            ga('require', 'linker'); // require plugin for cross-domain tracking
+            ga('require', 'displayfeatures'); // require plugin for doubleclick display ad features
+            ga('linker:autoLink', ['scprcontribute.publicradio.org']); //set linked domain
+            ga('set', 'dimension6', 'Southern California Public Radio');
+            ga('set', 'dimension7', 'Story');
+            ga('send', 'pageview');
+            ga('nprDsTracker.send', 'pageview');
+        </script>
+        <!-- end google analytics -->
+        <!-- begin comscore stats -->
+        <script>
+            var _comscore = _comscore || [];
+            _comscore.push({ c1: "2", c2: "6035974", c3: "", c4: "" });
+            (function() {
+            var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+            s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+            el.parentNode.insertBefore(s, el);
+            })();
+        </script>
+        <noscript>
+            <img src="http://b.scorecardresearch.com/p?c1=2&c2=6035974&c3=&c4=&c5=&c6=&c15=&cv=2.0&cj=1" />
+        </noscript>
+        <!-- end comscore stats -->
+
 
     <!-- build:js(.tmp) scripts/main.js -->
     <script src="scripts/common.js"></script>
