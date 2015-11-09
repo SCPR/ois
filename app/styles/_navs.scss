@@ -12,6 +12,15 @@
   -moz-transition: opacity 0.8s linear;
   -webkit-transition-delay: 0.3s; /* Safari */
   transition-delay: 0.3s;
+  @media screen and (max-width: 500px) {
+    left: auto;
+    right: 18px;
+    top: auto;
+    bottom: 18px;
+    margin-left: inherit;
+    text-align: right;
+    width: 50%;
+  }
   &.hidden {
     visibility: hidden;
     opacity: 0;
@@ -26,16 +35,28 @@
     position: absolute;
     width: 44px;
     height: 44px;
+    @media screen and (max-width: 500px) {
+      background: rgba($black, 0.4);
+      border: 1px solid rgba($white, 0.3);
+      border-radius: 4px;
+      position: relative;
+    }
     &:hover {
       opacity: 1;
     }
 
     &.next-slide {
       bottom: 26px;
+      @media screen and (max-width: 500px) {
+        bottom: auto;
+      }
     }
 
     &.prev-slide {
       top: 26px;
+      @media screen and (max-width: 500px) {
+        top: auto;
+      }
     }
   }
 

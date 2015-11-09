@@ -6,7 +6,7 @@
 }
   // Bounding blocks for simple single column layouts  
   .bound--singlecol {
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1000px) {
       padding: 0 40px;
     }
   }
@@ -69,13 +69,13 @@
 // Alignment elements to float content
 .bound__push-right {
   margin-left: 60%;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1000px) {
     margin-left: 0;
   }
 }
 .bound__push-left {
   margin-right: 60%;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1000px) {
     margin-right: 0;
   }
 }

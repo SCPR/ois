@@ -6,6 +6,9 @@ $alignments: ("left", "center", "right");
     text-align: #{$alignment};
   }
 }
+.align--left-small-viewport {
+  text-align: left;
+}
 
 .spacer {
   @include clearfix();
