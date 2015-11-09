@@ -50,6 +50,9 @@
     font-size: em(30);
     line-height: em(48, 30);
     margin-top: 0;
+    @media (max-width: em(500px)) {
+      font-size: em(26);
+    }
   }
   .copy--small {
     font-size: em(18);

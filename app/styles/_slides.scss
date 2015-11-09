@@ -51,6 +51,9 @@
 .slide__side-by-side {
   @include clearfix();
   padding-top: em($baseline);
+  @media screen and (max-width: 500px) {
+    padding-top: 0;
+  }
 }
   .slide__side--left {
     float: left;
@@ -82,6 +85,11 @@
 }
   .slide__img--number {
     margin-bottom: 10px;
+  }
+  .slide__img--hide-small {
+    @media screen and (max-width: 500px) {
+      display: none;
+    }
   }
 .slide__sharing {
   position: absolute;

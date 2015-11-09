@@ -9,6 +9,9 @@
     @media screen and (max-width: 1000px) {
       padding: 0 40px;
     }
+    @media screen and (max-width: 400px) {
+      padding: 0 20px;
+    }
   }
   .bound--singlecol-full {
     max-width: em(1440px);

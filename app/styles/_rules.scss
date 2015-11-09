@@ -3,6 +3,9 @@
   margin: 0;
   height: 1px;
   width: 100%;
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
 }
   .rule--dark {
     background: $gray-light;
