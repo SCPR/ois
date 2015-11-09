@@ -203,17 +203,6 @@ module.exports = function (grunt) {
       }
     },
 
-    // Automatically inject Bower components into the HTML file
-    wiredep: {
-      app: {
-        src: ['<%= config.app %>/index.html'],
-        ignorePath: /^(\.\.\/)*\.\./
-      },
-      sass: {
-        src: ['<%= config.app %>/styles/{,*/}*.{scss,sass}'],
-        ignorePath: /^(\.\.\/)+/
-      }
-    },
 
     // Renames files for browser caching purposes
     filerev: {
@@ -235,7 +224,7 @@ module.exports = function (grunt) {
       options: {
         dest: '<%= config.dist %>'
       },
-      html: '<%= config.app %>/index.html'
+      html: '<%= config.app %>/**/index.html'
     },
 
     // Performs rewrites based on rev and the useminPrepare configuration
@@ -280,7 +269,7 @@ module.exports = function (grunt) {
           collapseBooleanAttributes: true,
           collapseWhitespace: false,
           conservativeCollapse: true,
-          removeAttributeQuotes: true,
+          removeAttributeQuotes: false,
           removeCommentsFromCDATA: true,
           removeEmptyAttributes: true,
           removeOptionalTags: true,
@@ -335,6 +324,8 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             'images/{,*/}*.webp',
             '**/*.html',
+            'explore/*.json',
+            'explore/*.js',
             'styles/fonts/{,*/}*.*'
           ]
         }]
@@ -415,7 +406,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'wiredep',
     'useminPrepare',
     'concurrent:dist',
     'postcss',
@@ -424,7 +414,6 @@ module.exports = function (grunt) {
     'uglify',
     'copy:dist',
     'modernizr',
-    'filerev',
     'usemin',
     'htmlmin'
   ]);
