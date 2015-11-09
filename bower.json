@@ -6,7 +6,8 @@
     "modernizr": "~2.8.2",
     "fullpage.js": "~2.7.4",
     "bourbon": "~4.2.6",
-    "waypoints": "jquery-waypoints#~4.0.0"
+    "waypoints": "jquery-waypoints#~4.0.0",
+    "picturefill": "~3.0.1"
   },
   "devDependencies": {
     "chai": "~3.4.0",

@@ -18,6 +18,11 @@
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
+    <!-- Add picture element for old browsers -->
+    <script>
+      // Picture element HTML5 shiv
+      document.createElement( "picture" );
+    </script>
     <!-- Load web fonts -->
     <script src="https://use.typekit.net/fok5vpj.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -221,7 +226,11 @@
     <section id="slide-1" class="section">
       <div class="bound bound--singlecol bound--singlecol-wide">
         <p class="copy copy--med">Between Jan. 1, 2010 and Dec. 31, 2014, Los Angeles County district attorney records show at least <span class="copy--emphasis">375</span> people were shot by on-duty officers.</p>
-        <img src="images/img_total-incidents.png" class="slide__img" srcset="images/img_total-incidents-mobile.png 500w" alt="359 Total Incidents reviewed by KPCC">
+        <picture>
+          <source srcset="images/img_total-incidents.png" media="(min-width: 500px)">
+          <img class="slide__img" srcset="images/img_total-incidents-mobile.png" alt="359 Total Incidents reviewed by KPCC">
+        </picture>
+        
       </div>
     </section>
 
@@ -244,7 +253,10 @@
       <div class="bound bound--singlecol bound--singlecol-wide">
         <h3 class="heading heading--section">Armed vs. Unarmed</h3>
         <p class="copy copy--med copy--flush-top">According to KPCC's analysis of district attorney records, <span class="copy--emphasis">one in four</span> people shot by officers were unarmed.</p>
-        <img src="images/img_armed-vs-unarmed.png" srcset="images/img_armed-vs-unarmed-mobile.png 500w" alt="Armed vs. Unarmed incidents">
+        <picture>
+          <source srcset="images/img_armed-vs-unarmed.png" media="(min-width: 500px)">
+          <img class="slide__img" srcset="images/img_armed-vs-unarmed-mobile.png" alt="Armed vs. Unarmed incidents">
+        </picture>
       </div>
     </section>
 
@@ -252,14 +264,20 @@
       <div class="bound bound--singlecol bound--singlecol-med align--center align--left-small-viewport">
         <p class="copy copy--med">Of those 266 people who were armed, <span class="copy--emphasis">two-thirds</span> had a firearm and 57 shot at police.</p>
         <hr class="rule rule--pale">
-        <img src="images/img_civilian-weapons.png" srcset="images/img_civilian-weapons-mobile.png 500w" class="slide__img" alt="Civilian Weapons Possession">
+        <picture>
+          <source srcset="images/img_civilian-weapons.png" media="(min-width: 500px)">
+          <img class="slide__img" srcset="images/img_civilian-weapons-mobile.png" alt="Civilian Weapons Possession">
+        </picture>
       </div>
     </section>
 
     <section id="slide-8" class="section">
       <div class="bound bound--singlecol bound--singlecol-wide align--center align--left-small-viewport">
         <p class="copy copy--med">In <span class="copy--emphasis">320</span> of the shootings reviewed by KPCC, officers did not try less lethal weapons before using deadly force.</p>
-        <img src="images/img_first-use-of-force.png" srcset="images/img_first-use-of-force-mobile.png 500w" alt="Officer's First Use of Force">
+        <picture>
+          <source srcset="images/img_first-use-of-force.png" media="(min-width: 500px)">
+          <img class="slide__img" srcset="images/img_first-use-of-force-mobile.png" alt="Officer's First Use of Force">
+        </picture>
       </div>
     </section>
 
@@ -309,7 +327,10 @@
     <section id="slide-14" class="section">
       <div class="bound bound--singlecol bound--singlecol-wide">
         <p class="copy copy--med">A KPCC review of medical examiner records over the past five years found law enforcement officers in Los Angeles County fatally shot black people at <span class="copy--emphasis">triple the rate</span> of whites and Latinos.</p>
-        <img src="images/img_ois-by-race.png" class="slide__img" alt="Incidents by Race">
+        <picture>
+          <source srcset="images/img_ois-by-race.png" media="(min-width: 500px)">
+          <img class="slide__img" srcset="images/img_ois-by-race-mobile.png" alt="Incidents by Race">
+        </picture>
       </div>
     </section>
 
@@ -323,7 +344,10 @@
             <p class="copy copy--med">In 11 percent of the officer-involved shootings reviewed by KPCC, prosecutors found officers shot a civilian in order to protect innocent people who may have been in danger.</p>
           </div>
           <div class="slide__side--right align--right align--left-small-viewport">
-            <img src="images/img_protect-civilians_graphic.png" srcset="images/img_protect-civilians-mobile.png 500w" alt="40 civilians shot to protect innocent bystanders.">
+            <picture>
+              <source srcset="images/img_protect-civilians_graphic.png" media="(min-width: 500px)">
+              <img class="slide__img" srcset="images/img_protect-civilians-mobile.png" alt="40 civilians shot to protect innocent bystanders.">
+            </picture>
           </div>
         </div>
       </div>
@@ -362,7 +386,10 @@
             <p class="copy copy--med">For at least 17 of them, prosecutors said police were summoned because the person was suicidal or in danger of self-harm and ended up shot by officers.</p>
           </div>
           <div class="slide__side--right align--right align--left-small-viewport">
-            <img src="images/img_mentally-ill_graphic.png" srcset="images/img_mentally-ill-mobile.png 500w" alt="41 civilians shot with signs of mental illness.">
+            <picture>
+              <source srcset="images/img_mentally-ill_graphic.png" media="(min-width: 500px)">
+              <img class="slide__img" srcset="images/img_mentally-ill-mobile.png" alt="41 civilians shot with signs of mental illness.">
+            </picture>
           </div>
         </div>
       </div>
@@ -409,6 +436,7 @@
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/fullpage.js/jquery.fullPage.js"></script>
+    <script src="/bower_components/picturefill/src/picturefill.js"></script>
     <script src="/bower_components/fullpage.js/vendors/jquery.easings.min.js"></script>
     <script src="/bower_components/fullpage.js/vendors/jquery.slimscroll.min.js"></script>
     <script src="/bower_components/waypoints/lib/jquery.waypoints.js"></script>
