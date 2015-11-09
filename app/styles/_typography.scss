@@ -83,11 +83,17 @@
     color: $blue-muted;
     font-size: em(18);
     font-weight: 600;
+    @media (max-width: em(500px)) {
+      font-size: em(22);
+    }
   }
   .link--document {
     color: $blue-bright;
     font-size: em(18);
     font-weight: 300;
+    @media (max-width: em(500px)) {
+      font-size: em(22);
+    }
   }
 }
 
