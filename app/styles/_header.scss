@@ -5,6 +5,9 @@
   left: 0;
   right: 0;
   top: 0;
+  @media screen and (max-width: 768px) {
+    padding: 18px;
+  }
 }
   &.header--dark {
     color: $white;
@@ -48,6 +51,11 @@
       -webkit-transition: opacity 0.8s linear;
       -moz-transition: opacity 0.8s linear;
     }
+    @media (max-width: em(500px)) {
+      img {
+        height: 16px;
+      }
+    }
   }
     .header__pipe {
       background: $white;
@@ -55,6 +63,9 @@
       height: 20px;
       margin: 0 8px;
       width: 1px;
+      @media (max-width: em(500px)) {
+        height: 16px;
+      }
       .header--light & {
         background: $black;
       }
@@ -63,13 +74,22 @@
       display: inline-block;
       font-family: $font-sans;
       font-weight: 400;
-      font-size: em(20);
+      font-size: 20px;
       vertical-align: bottom;
+      @media (max-width: em(500px)) {
+        font-size: 16px;
+      }
     }
   .header__menu {
     position: absolute;
     right: 32px;
     top: 16px;
+    @media screen and (max-width: 768px) {
+      right: 18px;
+    }
+    @media screen and (max-width: 500px) {
+      display: none;
+    }
   }
     .menu__link {
       @include button-reset();

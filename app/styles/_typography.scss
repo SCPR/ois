@@ -1,14 +1,21 @@
 // Type Styles for the Sequential Narrative
 .typography--sequential {
-  @media (max-width: em(1000)) and (max-height: em(1000)) {
+  @media (max-width: em(1000px)) {
     font-size: 14px;
+  }
+  @media (max-width: em(500px)) {
+    font-size: 9px;
   }
 
   .title {
     font-family: $font-sans;
     font-size: em(68);
     font-weight: 700;
+    line-height: 1em;
     text-transform: uppercase;
+    @media screen and (max-width: 500px) {
+      margin-top: 18px;
+    }
   }
   .subtitle {
     font-size: em(24);
@@ -24,6 +31,7 @@
     font-size: em(26);
     font-weight: 700;
     line-height: em(34, 26);
+    margin-bottom: em(18);
   }
   .heading--category {
     font-size: em(16);
@@ -41,10 +49,17 @@
   .copy--med {
     font-size: em(30);
     line-height: em(48, 30);
+    margin-top: 0;
+    @media (max-width: em(500px)) {
+      font-size: em(26);
+    }
   }
   .copy--small {
     font-size: em(18);
     line-height: em(32, 18);
+    @media (max-width: em(500px)) {
+      font-size: em(22);
+    }
   }
   .copy--flush-top {
     margin-top: 0;
@@ -68,11 +83,17 @@
     color: $blue-muted;
     font-size: em(18);
     font-weight: 600;
+    @media (max-width: em(500px)) {
+      font-size: em(22);
+    }
   }
   .link--document {
     color: $blue-bright;
     font-size: em(18);
     font-weight: 300;
+    @media (max-width: em(500px)) {
+      font-size: em(22);
+    }
   }
 }
 
