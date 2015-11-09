@@ -69,6 +69,11 @@
       .header--light & {
         background: $black;
       }
+      .drawer & {
+        @media (max-width: em(500px)) {
+          display: none;
+        }
+      }
     }
     .header__series-title {
       display: inline-block;
@@ -77,7 +82,27 @@
       font-size: 20px;
       vertical-align: bottom;
       @media (max-width: em(500px)) {
+        display: none;
+      }
+    }
+    .header__series-title-mobile {
+      display: inline-block;
+      font-family: $font-sans;
+      font-weight: 400;
+      font-size: 20px;
+      vertical-align: bottom;
+      visibility: hidden;
+      &:after {
+        content: url('../images/icon_caret.svg');
+        display: inline-block;
+        margin-left: 5px;
+        .header--light & {
+          content: url('../images/icon_caret-blue.svg');;
+        }
+      }
+      @media (max-width: em(500px)) {
         font-size: 16px;
+        visibility: visible;
       }
     }
   .header__menu {
@@ -87,8 +112,10 @@
     @media screen and (max-width: 768px) {
       right: 18px;
     }
-    @media screen and (max-width: 500px) {
-      display: none;
+    &.open {
+      @media screen and (max-width: 500px) {
+        display: none;
+      }
     }
   }
     .menu__link {
