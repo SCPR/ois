@@ -1,12 +1,34 @@
 // styling for charts and graphs
+.table-container {
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 768px) {
+    margin-top: em($baseline * 2);
+  }
+}
+  .chart-container {
+    @media (max-width: 768px) {
+      margin-bottom: em($baseline * 2);
+      order: 1;
+    }
+  }
+  .filter-container {
+    @media (max-width: 768px) {
+      order: 2;
+    }
+  }
+
 .chart {
   clear: both;
   padding: 0;
   width: 100%;
-  @media (min-width: 700px) {
+  @media (min-width: 300px) {
     border-bottom: 1px solid $blue-light;
     height: 390px;
     margin: em($baseline) auto em($baseline * 4) ;
+  }
+  @media (max-width: 620px) {
+    height: 240px;
   }
 }
 .chart li {
@@ -24,11 +46,15 @@
   box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.6);
   -webkit-transition: height 0.6s ease-in-out;
   -moz-transition: height 0.6s ease-in-out;
-  @media (min-width: 700px) {
+  @media (min-width: 300px) {
     display: inline-block;
     height: 390px;
     margin: 0 7.8% 0 0;
     width: 9%;
+  }
+  @media (max-width: 620px) {
+    height: 240px;
+    margin: 0 7% 0 0;
   }
 }
 .chart .axis {
@@ -37,7 +63,7 @@
   text-align: left;
   top: 5px;
   width: 4%;
-  @media (min-width: 700px) {
+  @media (min-width: 300px) {
     display: inline-block;
   }
 }
@@ -46,6 +72,9 @@
   font-size: em(20);
   margin: -9px 0 57px 0;
   opacity: 0.4;
+  @media (max-width: 620px) {
+    margin-bottom: 40px;
+  }
 }
 .chart .percent {
   font-family: $font-sans-alt;
@@ -53,24 +82,30 @@
   font-weight: 300;
   opacity: .4;
   width: 100%;
-  @media (min-width: 700px) {
+  @media (min-width: 300px) {
+    font-size: em(56);
     position: absolute;
     top: -68px;
-    font-size: em(56);
+  }
+  @media (max-width: 768px) {
+    font-size: em(42);
+    top: -42px;
   }
 }
 .chart .skill {
   font-weight: 800;
   opacity: .5;
-  overflow: hidden;
   text-transform: uppercase;
   width: 100%;
   font-family: $font-sans;
   font-size: em(30);
   font-weight: 300;
-  @media (min-width: 700px) {
+  @media (min-width: 300px) {
     bottom: -70px;
     position: absolute;
+  }
+  @media (max-width: 620px) {
+    bottom: -40px;
   }
 }
 .chart .bar_chart {

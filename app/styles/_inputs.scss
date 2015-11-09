@@ -7,19 +7,36 @@
     border: 1px solid #ffffff;
     border-radius: 3px;
     margin-left: 10px;
+    overflow: hidden;
     padding: 6px 10px;
     position: relative;
     cursor: pointer;
-    &.selected {
-      background: $blue-muted;
+    @media screen and (max-width: 500px) {
+      margin-left: 5px;
+    }
+    input:checked + span {
+      background: $blue-dark;
     }
     span {
       font-family: $font-sans;
       font-size: em(16);
+      @media screen and (max-width: 500px) {
+        font-size: em(22);
+      }
     }
 }
 .checkbox-holder {
   margin: 18px 0;
+  position: relative;
+  @media screen and (max-width: 500px) {
+    margin-bottom: 32px;
+  }
+  > label {
+    @media screen and (max-width: 500px) {
+      display: block;
+      margin-left: 50px;
+    }
+  }
 }
 
 label [type="radio"]{
@@ -33,11 +50,18 @@ label [type="radio"]{
 .onoffswitch {
   display: inline-block;
   margin-left: 10px;
-  position: relative; width: 37px;
+  position: relative; 
+  width: 37px;
   vertical-align: middle;
   -webkit-user-select:none; 
   -moz-user-select:none; 
   -ms-user-select: none;
+  @media screen and (max-width: 500px) {
+    margin-left: 0;
+    position: absolute;
+    left: 0;
+    top: -4px;
+  }
 }
 .peoples, .incidents {
   display: none;

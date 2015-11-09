@@ -71,6 +71,9 @@
     color: $blue-muted;
     font-size: em(16);
     line-height: em(24);
+    @media (max-width: em(500px)) {
+      font-size: em(22);
+    }
   }
 
   .link {

@@ -164,12 +164,12 @@
   </nav>
 
   <!-- begin main container -->
-  <div class="spacer--4"></div>
-  <div class="bound bound--singlecol-med align--center">
+  <div class="spacer--6">&nbsp;</div>
+  <div class="bound bound--singlecol bound--singlecol-med align--center">
     <h3 class="copy copy--big">Explore the Data</h3>
     <p class="copy copy--instruction">KPCC analyzed summaries of officer-involved shootings by the Los Angeles County District Attorney from 2010-2014. Explore the data by applying different&nbsp;filters.</p>
   </div>
-  <div class="bound bound--singlecol-full">
+  <div class="bound bound--singlecol bound--singlecol-full">
     <div class="data-display"></div>
   </div>
   <!-- end main container -->
@@ -188,8 +188,8 @@
     <div class="align--right">
       <p><a id="clear-filters" class="link link--subtle" href="javascript:void(0)">Clear Filters</a></p>
     </div>
-    <div id="table-container">
-        <div class="spacer spacer--6">
+    <div id="table-container" class="table-container">
+        <div class="spacer spacer--6 filter-container">
         <!-- begin holds first item in array of filters -->
         <div id="<@= filters[1].type @>" class="singlecol__three-fourths">
           <form role="form" class="form-inline">
@@ -273,22 +273,23 @@
           </tbody>
         </table>
 
-
-      <ul class="chart">
-        <li class="axis">
-          <div class="label">100</div>
-          <div class="label">80</div>
-          <div class="label">60</div>
-          <div class="label">40</div>
-          <div class="label">20</div>
-        </li>
-        <@ _.each(people_years, function(year){ @>
-          <li class="bar bar_chart" id="people_<@= year @>" title="<@= year @>">
-            <div class="percent" id="people_<@= year @>"></div>
-            <div class="skill"><@= year @></div>
+      <div class="chart-container">
+        <ul class="chart">
+          <li class="axis">
+            <div class="label">100</div>
+            <div class="label">80</div>
+            <div class="label">60</div>
+            <div class="label">40</div>
+            <div class="label">20</div>
           </li>
-          <@ }); @>
-      </ul>
+          <@ _.each(people_years, function(year){ @>
+            <li class="bar bar_chart" id="people_<@= year @>" title="<@= year @>">
+              <div class="percent" id="people_<@= year @>"></div>
+              <div class="skill"><@= year @></div>
+            </li>
+            <@ }); @>
+        </ul>
+      </div>
 
     </div>
   </script>
