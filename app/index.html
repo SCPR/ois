@@ -410,7 +410,8 @@
     <script src="/bower_components/fullpage.js/jquery.fullPage.js"></script>
     <script src="/bower_components/fullpage.js/vendors/jquery.easings.min.js"></script>
     <script src="/bower_components/fullpage.js/vendors/jquery.slimscroll.min.js"></script>
-    <script src="/bower_components/waypoints/lib/noframework.waypoints.js"></script>
+    <script src="/bower_components/waypoints/lib/jquery.waypoints.js"></script>
+    <script src="/bower_components/waypoints/lib/shortcuts/inview.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -424,9 +425,20 @@
       ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
 
-        <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <script src="scripts/sequential.js"></script>
-        <!-- endbuild -->
+    <!-- build:js(.tmp) scripts/main.js -->
+    <script src="scripts/common.js"></script>
+    <script src="scripts/sequential.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js(.tmp) scripts/features.js -->
+    <script src="scripts/common.js"></script>
+    <script src="scripts/features.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js(.tmp) scripts/explore.js -->
+    <script src="scripts/common.js"></script>
+    <!-- endbuild -->
+
+    
 </body>
 </html>
