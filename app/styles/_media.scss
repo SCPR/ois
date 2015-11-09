@@ -7,30 +7,68 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: spaced-between;
+    @media screen and (max-width: 600px) {
+      display: block;
+    }
   }
   .media-list--stacked {
+    @include clearfix();
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: spaced-between;
+    position: relative;
+    @media screen and (max-width: 600px) {
+      height: 80px;
+    }
     .media-list__item {
       margin-bottom: em($baseline);
+      @media screen and (max-width: 600px) {
+        &:nth-of-type(1) {
+          left:0;
+          position: absolute;
+        }
+        &:nth-of-type(2) {
+          left:100px;
+          position: absolute;
+        }
+        &:nth-of-type(3) {
+          margin-top: 40px;
+        }
+      }
     }
   }
   .media-list__item {
     flex-grow: 1;
     margin: 0 10px; 
     width: 0;
+    &:nth-of-type(2) .media-list__heading  {
+      @media screen and (max-width: 600px) {
+        display: none;
+      }
+    }
   }
     .media-list__item--full {
       margin: 0; 
       width: 100%;
+      @media screen and (max-width: 600px) {
+        &:nth-of-type(1) {
+          margin-left: -33%;
+        }
+        &:nth-of-type(2) {
+          margin-left: -33%;
+        }
+      }
     }
     .media-list__item--thirds {
       margin: 0 2%; 
       width: 29%;
       @media screen and (max-width: 768px) {
         width: 46%;
+      }
+      @media screen and (max-width: 600px) {
+        margin: 0 0 22px;
+        width: 100%;
       }
     }
   .media-list__heading {
@@ -62,6 +100,9 @@
       height: auto !important;
       width: auto\9;
       -ms-interpolation-mode: bicubic; 
+      @media screen and (max-width: 600px) {
+        display: none;
+      }
     }
   }
   .media__image-container--cinema {
@@ -69,6 +110,11 @@
     max-height: 72px;
     overflow: hidden;
     position: relative;
+    .media--grid-item & {
+      @media screen and (max-width: 600px) {
+        display: none;
+      }
+    }
     .media__image {
       margin-bottom: 0;
       max-width: 100%;
@@ -113,6 +159,9 @@
     font-weight: 300;
     line-height: em(26, 20);
     margin-bottom: 10px;
+    @media screen and (max-width: 600px) {
+      margin-bottom: 4px;
+    }
   }
   .media__teaser {
     font-family: $font-sans;
@@ -150,6 +199,9 @@
       margin-bottom: 20px;
       min-height: em(240px);
     }
+    @media screen and (max-width: 600px) {
+      min-height: inherit;
+    }
   }
   .media--visual-launchpad {
     .media__content, {
@@ -163,6 +215,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      @media screen and (max-width: 600px) {
+        display: block;
+      }
     }
     .media__title {
       background: rgba($black, 0.4);
