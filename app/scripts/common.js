@@ -19,6 +19,12 @@ $(document).ready(function() {
     // Toggle top drawer
     $('[data-toggle="drawer-top"]').click(function(){
       var drawerTarget = $(this).data('target');
+
+      if (!$(drawerTarget).hasClass('active')) {
+        // fire GA events when drawer is opened
+        ga('send', 'event', 'ois', 'menuDrawer', 'opened');
+      }
+
       $(drawerTarget).toggleClass('active');
       toggleViewportScroll();
       return false;
