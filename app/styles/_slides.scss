@@ -96,7 +96,7 @@
     @media screen and (max-width: 500px) {
       display: none;
     }
-    @media screen and (max-height: 899px) {
+    @media screen and (max-height: 899px) and (min-width: 500px) {
       display: inline-block;
       margin: 18px 0;
       max-width: 100%;

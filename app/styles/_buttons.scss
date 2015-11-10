@@ -15,6 +15,12 @@
   padding: 8px 18px;
   text-transform: uppercase;
 }
+.button--bottom {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -130px;
+}
 .button--facebook, .button--twitter {
   display: inline-block;
   position: relative;
