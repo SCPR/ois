@@ -138,5 +138,119 @@
 
 // Audio Player UI
 .jp-audio {
-  display: none; // temporarily hide this while it's a WIP
+  background: $white;
+  border-left: 1px solid $gray-light;
+  border-right: 1px solid $gray-light;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  left: 350px;
+  top: 0;
+  bottom: 0;
+  right: 168px;
+  &.jp-state-playing {
+    opacity: 1;
+    -webkit-transition: opacity 0.3s linear;
+    -moz-transition: opacity 0.3s linear;
+    @media (max-width: em(900px)) {
+      left: 0;
+    }
+    @media (max-width: em(500px)) {
+      right: 0;
+    }
+  }
+  button {
+    @include button-reset();
+    opacity: 0.7;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+.jp-controls {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  @media (max-width: em(500px)) {
+    top: 7px;
+  }
+}
+.jp-controls-holder {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.jp-volume-controls {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  width: 100px;
+  @media (max-width: em(500px)) {
+    top: 7px;
+  }
+}
+.volume {
+  position: absolute;
+  right: 58px;
+  width: 27px;
+}
+.jp-mute, .jp-volume-max {
+  width: 27px;
+  height: 27px;
+  padding: 0;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  &.hidden, &.hidden img{
+    margin-top: -1000px;
+  }
+  @media (max-width: em(500px)) {
+    top: 8px;
+  }
+}
+.jp-stop {
+  position: absolute;
+  right: 0;
+  top: 3px;
+  @media (max-width: em(500px)) {
+    top: 2px;
+  }
+}
+.jp-current-time, .jp-duration {
+  color: $gray-medium;
+  font-family: $font-sans-alt;
+  font-size: em(14);
+  position: absolute;
+  top: 32px;
+}
+.jp-current-time {
+  left: 80px;
+}
+.jp-duration {
+  right: 125px;
+}
+.jp-progress {
+  position: absolute;
+  top: 39px;
+  left: 128px;
+  right: 180px;
+  height: 4px;
+}
+.jp-seek-bar {
+  background: $gray-light;
+}
+.jp-play-bar {
+  background: $blue-muted;
+  height: 4px;
+}
+.jp-title {
+  color: $blue-muted;
+  font-family: $font-sans;
+  font-size: em(14);
+  font-weight: 600;
+  position: absolute;
+  left: 80px;
+  top: 10px;
 }
