@@ -6,3 +6,16 @@
     display: inline-block;
     margin: 0 4px;
   }
+
+.page--share {
+  .fullpage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; 
+  }
+}
