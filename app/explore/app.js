@@ -177,19 +177,31 @@
                         buttons: [
                             {opt: "Fatal", opt_field: "fatal"},
                             {opt: "Non-fatal", opt_field: "nonfatal_calc"},
-                        ]}, {
+                        ]
+                    }, {
                         field_name: "armed_non",
                         group_name: "Weapon",
                         buttons: [
                             {opt: "Unarmed", opt_field: "person_unarmed"},
                             {opt: "Firearm", opt_field: "armed_with_firearm_calc"},
                             {opt: "Other Weapon", opt_field: "armed_with_other_calc"},
-                        ]}, {
+                        ]
+                    }, {
                         field_name: "gender",
                         group_name: "Gender",
                         buttons: [
                             {opt: "Female", opt_field: "person_female"},
                             {opt: "Male", opt_field: "person_male"},
+                        ]
+                    }, {
+                        field_name: "person_ethnicity",
+                        group_name: "Race/Ethnicity",
+                        buttons: [
+                            {opt: "Latino", opt_field: "latino"},
+                            {opt: "Black", opt_field: "black"},
+                            {opt: "White", opt_field: "white"},
+                            {opt: "Asian", opt_field: "asian"},
+                            {opt: "Other", opt_field: "other"},
                         ]
                     }
                 ],
@@ -231,7 +243,7 @@
                 // push ethnicities to view object
                 if (_this.person_ethnicity != null || _this.person_ethnicity != undefined){
                     if (_this.person_ethnicity === "HISPANIC/LATIN AMERICAN"){
-                        model.set("person_ethnicity", "hispanic");
+                        model.set("person_ethnicity", "latino");
                     } else if (_this.person_ethnicity === "MIDDLE EASTERN"){
                         model.set("person_ethnicity", "middle-eastern");
                     } else {
@@ -239,6 +251,7 @@
                     };
                     view_object.ethnicities.push(_this.person_ethnicity);
                 };
+
             });
             view_object.relevant_incidents.forEach(function(model, index){
                 var _this = model.attributes;
@@ -411,6 +424,20 @@
                 if($this.is(":checked")){
                     var filter_id = $this.attr("id");
                     var filter_type = $this.attr("class");
+
+                    /* address filtering for ethnicity in fatal incidents */
+                    // if (filter_id === "fatal"){
+                    //     var active;
+                    //     $("div.person_ethnicity.invisible").removeClass("invisible");
+                    //     if($("input:radio[name='person_ethnicity']").is(":checked")) {
+                    //         active = $("input:radio[name='person_ethnicity']").attr("id");
+                    //     } else {
+                    //         active = null;
+                    //     };
+                    // } else if (filter_id === "nonfatal_calc"){
+                    //     $("div.person_ethnicity").addClass("invisible");
+                    // };
+
                     filters[filter_type].push(filter_id)
                 };
             });

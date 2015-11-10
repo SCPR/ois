@@ -185,6 +185,23 @@
   </div>
   <!-- end main container -->
 
+  <!-- build:js(.) scripts/vendor.js -->
+      <!-- bower:js -->
+      <script src="/bower_components/modernizr/modernizr.js"></script>
+      <script src="/bower_components/jquery/dist/jquery.js"></script>
+      <script src="/bower_components/fullpage.js/jquery.fullPage.js"></script>
+      <script src="/bower_components/picturefill/src/picturefill.js"></script>
+      <script src="/bower_components/fullpage.js/vendors/jquery.easings.min.js"></script>
+      <script src="/bower_components/fullpage.js/vendors/jquery.slimscroll.min.js"></script>
+      <script src="/bower_components/waypoints/lib/jquery.waypoints.js"></script>
+      <script src="/bower_components/waypoints/lib/shortcuts/inview.js"></script>
+      <!-- endbower -->
+      <!-- endbuild -->
+
+    <!-- build:js(.tmp) scripts/explore.js -->
+      <script src="scripts/common.js"></script>
+      <!-- endbuild -->
+
   <script src="../scripts/vendor.js"></script>
   <script src="../scripts/explore.js"></script>
 
@@ -206,16 +223,28 @@
             <fieldset>
               <legend class="form__legend"><@= filters[1].proper @> Filters</legend>
               <div class="singlecol__half">
-              <@ _.each(filters[1].radio_buttons, function(item){ @>
-                <div class="radio">
-                  <label class="form__group-name"><@= item.group_name @>:</label>
-                  <@ _.each(item.buttons, function(button){ @>
-                    <label class="radio-inline" for="<@= button.opt_field @>">
-                      <input type="radio" class="<@= filters[1].type @>" id="<@= button.opt_field @>" name="<@= item.field_name @>" value="<@= button.opt @>">
-                      <span><@= button.opt @></span>
-                    </label>
-                    <@ }); @>
-                </div>
+                  <@ _.each(filters[1].radio_buttons, function(item){ @>
+                    <@ if (item.field_name === "person_ethnicity"){ @>
+                        <div class="radio <@= item.field_name @> invisible">
+                          <label class="form__group-name"><@= item.group_name @>:</label>
+                          <@ _.each(item.buttons, function(button){ @>
+                            <label class="radio-inline" for="<@= button.opt_field @>">
+                              <input type="radio" class="<@= filters[1].type @>" id="<@= button.opt_field @>" name="<@= item.field_name @>" value="<@= button.opt @>">
+                              <span><@= button.opt @></span>
+                            </label>
+                            <@ }); @>
+                        </div>
+                    <@ } else { @>
+                        <div class="radio <@= item.field_name @>">
+                          <label class="form__group-name"><@= item.group_name @>:</label>
+                          <@ _.each(item.buttons, function(button){ @>
+                            <label class="radio-inline" for="<@= button.opt_field @>">
+                              <input type="radio" class="<@= filters[1].type @>" id="<@= button.opt_field @>" name="<@= item.field_name @>" value="<@= button.opt @>">
+                              <span><@= button.opt @></span>
+                            </label>
+                            <@ }); @>
+                        </div>
+                    <@ }; @>
                 <@ }); @>
               </div>
               <div class="singlecol__half">
@@ -240,7 +269,7 @@
             <fieldset>
               <legend class="form__legend"><@= filters[0].proper @> Filters</legend>
               <@ _.each(filters[0].radio_buttons, function(item){ @>
-                <div class="radio">
+                <div class="radio field_name">
                   <@ _.each(item.buttons, function(button){ @>
                     <label class="radio-inline" for="<@= button.opt_field @>">
                       <input type="radio" class="<@= filters[0].type @>" id="<@= button.opt_field @>" name="<@= item.field_name @>" value="<@= button.opt @>"> <@= button.opt @>
