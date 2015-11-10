@@ -60,6 +60,14 @@
         }
       }
     }
+    .media-list__item--half {
+      margin: 0 2%; 
+      width: 46%;
+      @media screen and (max-width: 600px) {
+        margin: 0 0 22px;
+        width: 100%;
+      }
+    }
     .media-list__item--thirds {
       margin: 0 2%; 
       width: 29%;
