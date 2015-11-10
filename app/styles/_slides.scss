@@ -83,7 +83,7 @@
   }
 .slide__img {
   margin-top: 18px;
-  @media screen and (max-height: 899px) {
+  @media screen and (max-height: 899px) and (min-width: 800px) {
     display: block;
     margin: 18px auto 0;
     max-width: 75%;
