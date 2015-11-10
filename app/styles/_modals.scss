@@ -18,6 +18,10 @@
   }
 }
 
+.modal__link {
+  text-decoration: underline;
+}
+
 // Modal effect: Slide from the bottom
 .modal--slide-up {
   -webkit-transform: translateX(-50%) translateY(-20%);
