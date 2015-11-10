@@ -163,15 +163,7 @@
             this.view_object.filters = [{
                 type: "incidents",
                 proper: "Incident",
-                radio_buttons: [
-                    // {
-                    //     field_name: "lethal_force_first",
-                    //     buttons: [
-                    //         {opt: "Lethal Force First", opt_field: "lethal_force_as_first_calc"},
-                    //         {opt: "Non-Lethal Force First", opt_field: "other_force_as_first_calc"},
-                    //     ]
-                    // }
-                ],
+                radio_buttons: [],
                 checkboxes: [
                     {opt: "Officer Defense Of Civillians", opt_field: "officer_defense_of_civillians"},
                     {opt: "Car Stop", opt_field: "car_stop"},
@@ -206,9 +198,9 @@
                     {opt: "Officer Couldn't See Person's Hands", opt_field: "officer_couldnt_see_persons_hands"},
                     {opt: "Officer Said Person Grabbed For Service Firearm", opt_field: "grabbed_officers_weapon"},
                     {opt: "Officer Said Vehicle Used as Weapon", opt_field: "vehicle_as_weapon"},
-                    {opt: "Pursuit Occurred", opt_field: "pursuit_occurred"},
+                    {opt: "Chase or Pursuit Occurred", opt_field: "pursuit_occurred"},
                     {opt: "Signs of Drug/Alcohol Impairment", opt_field: "person_intoxicated"},
-                    {opt: "Signs of Person Mental Illness", opt_field: "person_mentally_ill"},
+                    {opt: "Signs of Mental Illnes", opt_field: "person_mentally_ill"},
                 ]}
             ];
             this.render();
