@@ -83,6 +83,11 @@
   }
 .slide__img {
   margin-top: 18px;
+  @media screen and (max-height: 899px) {
+    display: block;
+    margin: 18px auto 0;
+    max-width: 75%;
+  } 
 }
   .slide__img--number {
     margin-bottom: 10px;
@@ -91,6 +96,11 @@
     @media screen and (max-width: 500px) {
       display: none;
     }
+    @media screen and (max-height: 899px) {
+      display: inline-block;
+      margin: 18px 0;
+      max-width: 100%;
+    } 
   }
 .slide__sharing {
   position: absolute;

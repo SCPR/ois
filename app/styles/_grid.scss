@@ -21,6 +21,9 @@
     @media screen and (max-width: 400px) {
       padding: 0 20px;
     }
+    @media screen and (max-height: 899px) {
+      padding: 80px 40px;
+    } 
   }
   .bound--singlecol-wide {
     max-width: em(1040px);
