@@ -80,11 +80,11 @@
       <p class="story-body">He also was unarmed.</p>
     </div>
     <div class="bound bound--story-wide">
-      <aside class="asset asset--audio">
+      <aside class="asset asset--audio story-audio-1">
         <div class="asset--audio__play-button"></div>
         <div>
-          <span class="asset--audio__title">Deadly Force</span>
-          <span class="asset--audio__duration">6 min 39 sec</span>
+          <span class="asset--audio__title">Listen to the story: Deadly force</span>
+          <span class="asset--audio__duration">5 min 50 sec</span>
         </div>
       </aside>
     </div>
@@ -329,12 +329,51 @@
       <h3 class="header__series-title">Officer Involved</h3>
       <h3 class="header__series-title-mobile" data-toggle="drawer-top" data-target="#seriesMenu">Officer Involved</h3>
     </div>
+
+    <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+    <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+      <div class="jp-type-single">
+        <div class="jp-gui jp-interface">
+          <div class="jp-volume-controls">
+            <button class="jp-mute" role="button" tabindex="0">mute</button>
+            <button class="jp-volume-max" role="button" tabindex="0">max volume</button>
+            <div class="jp-volume-bar">
+              <div class="jp-volume-bar-value"></div>
+            </div>
+          </div>
+          <div class="jp-controls-holder">
+            <div class="jp-controls">
+              <button class="jp-play" role="button" tabindex="0">play</button>
+              <button class="jp-stop" role="button" tabindex="0">stop</button>
+            </div>
+            <div class="jp-progress">
+              <div class="jp-seek-bar">
+                <div class="jp-play-bar"></div>
+              </div>
+            </div>
+            <div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div>
+            <div class="jp-duration" role="timer" aria-label="duration">&nbsp;</div>
+            <div class="jp-toggles">
+              <button class="jp-repeat" role="button" tabindex="0">repeat</button>
+            </div>
+          </div>
+        </div>
+        <div class="jp-details">
+          <div class="jp-title" aria-label="title">&nbsp;</div>
+        </div>
+        <div class="jp-no-solution">
+          <span>Update Required</span>
+          To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+        </div>
+      </div>
+    </div>
+
     <div class="header__menu open">
-  <button class="menu__link" data-toggle="drawer-top" data-target="#seriesMenu">
-    <img src="../../images/icon_plus.svg" class="icon icon--left">
-    <span>Explore</span>
-  </button>
-</div>
+      <button class="menu__link" data-toggle="drawer-top" data-target="#seriesMenu">
+        <img src="../../images/icon_plus.svg" class="icon icon--left">
+        <span>Explore</span>
+      </button>
+    </div>
   </header>
   <nav class="drawer drawer--light drawer--top drawer--flex" id="seriesMenu">
     <div class="header header--light">
@@ -458,6 +497,25 @@
     </div>
   </nav>
 
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/fullpage.js/jquery.fullPage.js"></script>
+    <script src="/bower_components/picturefill/src/picturefill.js"></script>
+    <script src="/bower_components/fullpage.js/vendors/jquery.easings.min.js"></script>
+    <script src="/bower_components/fullpage.js/vendors/jquery.slimscroll.min.js"></script>
+    <script src="/bower_components/waypoints/lib/jquery.waypoints.js"></script>
+    <script src="/bower_components/waypoints/lib/shortcuts/inview.js"></script>
+    <script src="/bower_components/jPlayer/dist/jplayer/jquery.jplayer.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js(.tmp) scripts/features.js -->
+    <script src="../../scripts/common.js"></script>
+    <script src="../../scripts/features.js"></script>
+    <!-- endbuild -->
+
     <script src="../../scripts/vendor.js"></script>
 
     <!-- begin chartbeat -->
@@ -512,6 +570,32 @@
 
 
     <script src="../../scripts/features.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $("#jquery_jplayer_1").jPlayer({
+            ready: function () {
+              $(this).jPlayer("setMedia", {
+                title: "Unarmed and Dangerous",
+                mp3: "http://media.scpr.org/audio/upload/2015/11/09/OIS_unarmed.mp3",
+              });
+            },
+            cssSelectorAncestor: "#jp_container_1",
+            swfPath: "../../scripts",
+            supplied: "mp3",
+            autoBlur: false,
+            smoothPlayBar: true,
+            keyEnabled: true,
+            remainingDuration: true,
+            toggleDuration: true
+          });
+
+          $(".story-audio-1").click( function() {
+            $("#jquery_jplayer_1").jPlayer("play");
+            $(this).addClass("now-playing");
+          });
+        });
+      </script>
 
 </body>
 </html>
