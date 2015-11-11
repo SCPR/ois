@@ -105,6 +105,11 @@
   @media (max-width: 700px) {
     font-size: 14px;
   }
+  .drawer {
+    @media (max-width: em(500px)) {
+      font-size: 11px;
+    }
+  }
   .headline {
     font-family: $font-serif;
     font-size: em(64);

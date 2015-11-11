@@ -620,16 +620,20 @@
             ready: function () {
               $(this).jPlayer("setMedia", {
                 title: "Mental illness",
-                m4a: "http://media.scpr.org/audio/upload/2015/11/09/OIS_mental-health.m4a",
+                m4a: "http://media.scpr.org/audio/upload/2015/11/09/OIS_mental-health.m4a"
               });
+            },
+            play: function() { // To avoid multiple jPlayers playing together.
+              $(this).jPlayer("pauseOthers");
             },
             cssSelectorAncestor: "#jp_container_1",
             swfPath: "../../scripts",
+            wmode: "window",
             supplied: "m4a",
             autoBlur: false,
             smoothPlayBar: true,
             keyEnabled: true,
-            remainingDuration: true,
+            remainingDuration: false,
             toggleDuration: true
           });
 
@@ -637,22 +641,27 @@
             $("#jquery_jplayer_2").jPlayer("stop");
             $("#jquery_jplayer_1").jPlayer("play");
             $(this).addClass("now-playing");
+            $("#jp_container_1").addClass("now-playing");
           });
 
           $("#jquery_jplayer_2").jPlayer({
             ready: function () {
               $(this).jPlayer("setMedia", {
                 title: "Training",
-                mp3: "http://media.scpr.org/audio/upload/2015/11/09/OIS_training.mp3",
+                mp3: "http://media.scpr.org/audio/upload/2015/11/09/OIS_training.mp3"
               });
+            },
+            play: function() { // To avoid multiple jPlayers playing together.
+              $(this).jPlayer("pauseOthers");
             },
             cssSelectorAncestor: "#jp_container_2",
             swfPath: "../../scripts",
+            wmode: "window",
             supplied: "mp3",
             autoBlur: false,
             smoothPlayBar: true,
             keyEnabled: true,
-            remainingDuration: true,
+            remainingDuration: false,
             toggleDuration: true
           });
 
@@ -660,11 +669,16 @@
             $("#jquery_jplayer_1").jPlayer("stop");
             $("#jquery_jplayer_2").jPlayer("play");
             $(this).addClass("now-playing");
+            $("#jp_container_2").addClass("now-playing");
           });
 
           $(".volume button").click( function() {
             $(this).addClass("hidden");
             $(this).siblings().removeClass("hidden");
+          });
+
+          $(".jp-stop").click( function() {
+            $(".jp-audio").removeClass("now-playing");
           });
         });
       </script>
