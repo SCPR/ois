@@ -36,7 +36,7 @@
 
   <header class="header header--dark header--top">
     <div class="header__branding">
-      <a href="http://www.scpr.org/"><img src="../../images/logo_kpcc-white.svg" alt="89.3 KPCC"></a>
+      <img src="../../images/logo_kpcc-white.svg" alt="89.3 KPCC">
       <span class="header__pipe"></span>
       <h3 class="header__series-title">Officer Involved</h3>
       <h3 class="header__series-title-mobile" data-toggle="drawer-top" data-target="#seriesMenu">Officer Involved</h3>
@@ -337,14 +337,13 @@
 
   <header class="header header--light header--solid header--fixed">
     <div class="header__branding">
-      <a href="http://www.scpr.org/"><img src="../../images/logo_kpcc-black.svg" alt="89.3 KPCC"></a>
+      <img src="../../images/logo_kpcc-black.svg" alt="89.3 KPCC">
       <span class="header__pipe"></span>
       <h3 class="header__series-title">Officer Involved</h3>
-      <h3 class="header__series-title-mobile" data-toggle="drawer-top" data-target="#seriesMenu">Officer Involved</h3>
     </div>
 
-    <div id="jquery_jplayer_1" class="jp-jplayer"></div>
     <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+      <div id="jquery_jplayer_1" class="jp-jplayer"></div>
       <div class="jp-type-single">
         <div class="jp-gui jp-interface">
           <div class="jp-controls-holder">
@@ -386,8 +385,8 @@
       </div>
     </div>
 
-    <div id="jquery_jplayer_2" class="jp-jplayer"></div>
     <div id="jp_container_2" class="jp-audio" role="application" aria-label="media player">
+      <div id="jquery_jplayer_2" class="jp-jplayer"></div>
       <div class="jp-type-single">
         <div class="jp-gui jp-interface">
           <div class="jp-controls-holder">
@@ -439,7 +438,7 @@
   <nav class="drawer drawer--light drawer--top drawer--flex" id="seriesMenu">
     <div class="header header--light">
       <div class="header__branding">
-        <a href="http://www.scpr.org/"><img src="../../images/logo_kpcc-black.svg" alt="89.3 KPCC"></a>
+        <img src="../../images/logo_kpcc-black.svg" alt="89.3 KPCC">
         <span class="header__pipe"></span>
         <h3 class="header__series-title">Officer Involved</h3>
         <h3 class="header__series-title-mobile" data-toggle="drawer-top" data-target="#seriesMenu">Officer Involved</h3>
@@ -562,6 +561,25 @@
 
     <script src="../../scripts/vendor.js"></script>
 
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/fullpage.js/jquery.fullPage.js"></script>
+    <script src="/bower_components/picturefill/src/picturefill.js"></script>
+    <script src="/bower_components/fullpage.js/vendors/jquery.easings.min.js"></script>
+    <script src="/bower_components/fullpage.js/vendors/jquery.slimscroll.min.js"></script>
+    <script src="/bower_components/waypoints/lib/jquery.waypoints.js"></script>
+    <script src="/bower_components/waypoints/lib/shortcuts/inview.js"></script>
+    <script src="/bower_components/jPlayer/dist/jplayer/jquery.jplayer.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js(.tmp) scripts/features.js -->
+    <script src="../../scripts/common.js"></script>
+    <script src="../../scripts/features.js"></script>
+    <!-- endbuild -->
+
     <!-- begin chartbeat -->
         <script type="text/javascript">
             var _sf_async_config = { uid: 33583, domain: 'projects.scpr.org', useCanonical:true };
@@ -617,34 +635,6 @@
 
     <script type="text/javascript">
         $(document).ready(function(){
-          $("#jquery_jplayer_1").jPlayer({
-            ready: function () {
-              $(this).jPlayer("setMedia", {
-                title: "Mental illness",
-                m4a: "http://media.scpr.org/audio/upload/2015/11/09/OIS_mental-health.m4a"
-              });
-            },
-            play: function() { // To avoid multiple jPlayers playing together.
-              $(this).jPlayer("pauseOthers");
-            },
-            cssSelectorAncestor: "#jp_container_1",
-            swfPath: "../../scripts",
-            wmode: "window",
-            supplied: "m4a",
-            autoBlur: false,
-            smoothPlayBar: true,
-            keyEnabled: true,
-            remainingDuration: false,
-            toggleDuration: true
-          });
-
-          $(".story-audio-1").click( function() {
-            $("#jquery_jplayer_2").jPlayer("stop");
-            $("#jquery_jplayer_1").jPlayer("play");
-            $(this).addClass("now-playing");
-            $("#jp_container_1").addClass("now-playing");
-          });
-
           $("#jquery_jplayer_2").jPlayer({
             ready: function () {
               $(this).jPlayer("setMedia", {
