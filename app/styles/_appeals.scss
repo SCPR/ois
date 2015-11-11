@@ -1,0 +1,32 @@
+.appeal {
+  border-bottom: 1px solid $blue-cobalt;
+  border-top: 3px solid $blue-cobalt;
+  margin: em($baseline * 2) 0;
+  padding: em($baseline) 0;
+}
+  .appeal--right {
+    float: right;
+    margin: em($baseline) (grid-calc(2) * -1) em($baseline) em($baseline);
+    max-width: 420px;
+    @media screen and (max-width: grid-calc(9)) {
+      float: none;
+      margin: em($baseline * 2) 0;
+      max-width: 100%;
+    }
+  }
+  .appeal__heading {
+    color: $blue-medium;
+    font-family: $font-sans;
+    font-size: em(28);
+    font-weight: 300;
+    margin-bottom: em($baseline / 2);
+    img {
+      vertical-align: bottom;
+    }
+  }
+  .appeal__description {
+    font-size: em(18);
+    font-weight: 300;
+    line-height: em(32, 18);
+  }
+
