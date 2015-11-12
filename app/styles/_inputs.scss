@@ -43,6 +43,11 @@ label [type="radio"]{
     display: none;
 }
 
+label.display-until-toggle {
+    opacity: 0.5;
+    cursor: default;
+}
+
 [type="radio"] + span{
   display: inline-block;
 }
@@ -50,11 +55,11 @@ label [type="radio"]{
 .onoffswitch {
   display: inline-block;
   margin-left: 10px;
-  position: relative; 
+  position: relative;
   width: 37px;
   vertical-align: middle;
-  -webkit-user-select:none; 
-  -moz-user-select:none; 
+  -webkit-user-select:none;
+  -moz-user-select:none;
   -ms-user-select: none;
   @media screen and (max-width: 500px) {
     margin-left: 0;
@@ -67,28 +72,28 @@ label [type="radio"]{
   display: none;
 }
 .onoffswitch-label {
-  display: block; 
-  overflow: hidden; 
+  display: block;
+  overflow: hidden;
   cursor: pointer;
-  height: 22px; 
-  padding: 0; 
+  height: 22px;
+  padding: 0;
   line-height: 22px;
-  border: 2px solid rgba($white, 0.7); 
+  border: 2px solid rgba($white, 0.7);
   border-radius: 22px;
   transition: background-color 0.2s ease-in-out;
 }
 .onoffswitch-label:before {
   content: "";
-  display: block; 
-  width: 20px; 
+  display: block;
+  width: 20px;
   margin: 0px;
   background: $white;
-  position: absolute; 
-  top: 3px; 
+  position: absolute;
+  top: 3px;
   bottom: 3px;
   right: 14px;
   border-radius: 20px;
-  transition: all 0.2s ease-in-out 0s; 
+  transition: all 0.2s ease-in-out 0s;
 }
 .peoples:checked + .onoffswitch-label, .incidents:checked + .onoffswitch-label {
   background-color: $blue-bright;
@@ -97,5 +102,5 @@ label [type="radio"]{
   border-color: $blue-bright;
 }
 .peoples:checked + .onoffswitch-label:before, .incidents:checked + .onoffswitch-label:before {
-  right: 2px; 
+  right: 2px;
 }
