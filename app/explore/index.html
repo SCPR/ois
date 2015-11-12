@@ -186,23 +186,8 @@
   </div>
   <!-- end main container -->
 
-<!-- for local dev -->
-<!--
-      <script src="/bower_components/modernizr/modernizr.js"></script>
-      <script src="/bower_components/jquery/dist/jquery.js"></script>
-      <script src="/bower_components/fullpage.js/jquery.fullPage.js"></script>
-      <script src="/bower_components/picturefill/src/picturefill.js"></script>
-      <script src="/bower_components/fullpage.js/vendors/jquery.easings.min.js"></script>
-      <script src="/bower_components/fullpage.js/vendors/jquery.slimscroll.min.js"></script>
-      <script src="/bower_components/waypoints/lib/jquery.waypoints.js"></script>
-      <script src="/bower_components/waypoints/lib/shortcuts/inview.js"></script>
-      <script src="scripts/common.js"></script>
--->
-
   <script src="../scripts/vendor.js"></script>
   <script src="../scripts/explore.js"></script>
-
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.1/backbone-min.js"></script>
@@ -222,14 +207,19 @@
               <div class="singlecol__half">
                   <@ _.each(filters[1].radio_buttons, function(item){ @>
                     <@ if (item.field_name === "person_ethnicity"){ @>
-                        <div class="radio <@= item.field_name @> invisible">
+                        <div class="radio <@= item.field_name @>">
                           <label class="form__group-name"><@= item.group_name @>:</label>
+                          <label class="display-until-toggle radio-inline">
+                            <span>Available for fatal shootings</span>
+                          </label>
+                          <span class="hidden-until-toggle invisible">
                           <@ _.each(item.buttons, function(button){ @>
                             <label class="radio-inline" for="<@= button.opt_field @>">
                               <input type="radio" class="<@= filters[1].type @>" id="<@= button.opt_field @>" name="<@= item.field_name @>" value="<@= button.opt @>">
                               <span><@= button.opt @></span>
                             </label>
-                            <@ }); @>
+                          <@ }); @>
+                          </span>
                         </div>
                     <@ } else { @>
                         <div class="radio <@= item.field_name @>">

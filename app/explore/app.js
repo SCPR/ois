@@ -165,7 +165,9 @@
                 proper: "Incident",
                 radio_buttons: [],
                 checkboxes: [
-                    {opt: "Officer Defense Of Civilians", opt_field: "officer_defense_of_civillians"},
+                    {opt: "Officer Self Defense", opt_field: "officer_self_defense"},
+                    {opt: "Officer Defense Of Other Officers", opt_field: "officer_defense_of_officers"},
+                    {opt: "Officer Defense Of Civilians", opt_field: "officer_defense_of_civilians"},
                     {opt: "Car Stop", opt_field: "car_stop"},
                 ]}, {
                 type: "peoples",
@@ -199,7 +201,7 @@
                         buttons: [
                             {opt: "Latino", opt_field: "latino"},
                             {opt: "Black", opt_field: "black"},
-                            {opt: "White", opt_field: "white"},
+                            {opt: "White", opt_field: "caucasian"},
                             {opt: "Asian", opt_field: "asian"},
                             {opt: "Other", opt_field: "other"},
                         ]
@@ -241,15 +243,33 @@
                     };
                 };
                 // push ethnicities to view object
-                if (_this.person_ethnicity != null || _this.person_ethnicity != undefined){
-                    if (_this.person_ethnicity === "HISPANIC/LATIN AMERICAN"){
-                        model.set("person_ethnicity", "latino");
-                    } else if (_this.person_ethnicity === "MIDDLE EASTERN"){
-                        model.set("person_ethnicity", "middle-eastern");
+                model.set("no_ethnicity", true);
+                if (_this.fatal === true){
+                    if (_this.person_ethnicity != null || _this.person_ethnicity != undefined){
+                        if (_this.person_ethnicity === "BLACK"){
+                            model.set("person_ethnicity", "black");
+                            model.set("black", true);
+                        } else if (_this.person_ethnicity === "HISPANIC/LATIN AMERICAN"){
+                            model.set("person_ethnicity", "latino");
+                            model.set("latino", true);
+                        } else if (_this.person_ethnicity === "MIDDLE EASTERN"){
+                            model.set("person_ethnicity", "middle-eastern");
+                            model.set("other", true);
+                        } else if (_this.person_ethnicity === "ASIAN"){
+                            model.set("person_ethnicity", "asian");
+                            model.set("asian", true);
+                        } else if (_this.person_ethnicity === "CAUCASIAN"){
+                            model.set("person_ethnicity", "caucasian");
+                            model.set("caucasian", true);
+                        } else {
+                            model.set("person_ethnicity", _this.person_ethnicity.toLowerCase());
+                            model.set("other", true);
+                        };
+                        view_object.ethnicities.push(_this.person_ethnicity);
                     } else {
-                        model.set("person_ethnicity", _this.person_ethnicity.toLowerCase());
-                    };
-                    view_object.ethnicities.push(_this.person_ethnicity);
+                        model.set("person_ethnicity", "n/a");
+                        model.set("other", true);
+                    }
                 };
 
             });
@@ -366,9 +386,19 @@
             _.each(this.view_object.obj.active_checkboxes.peoples, function(item, index, list){
                 return people_filters[item] = true;
             });
+
+
+            // console.log(people_filters);
+
+
             this.view_object.obj.filtered.people = new App.Collections.Peoples();
             var people_filters_empty = _.isEmpty(people_filters);
             var incident_filters_empty = _.isEmpty(incident_filters);
+
+
+            // console.log(this.view_object.obj.init.people);
+
+
             if (people_filters_empty === true && incident_filters_empty === true){
                 this.view_object.obj.filtered.people = this.view_object.obj.init.people;
             } else if (people_filters_empty === false && incident_filters_empty === true){
@@ -423,22 +453,23 @@
                 var $this = $(this);
                 if($this.is(":checked")){
                     var filter_id = $this.attr("id");
-                    var filter_type = $this.attr("class");
+                    var filter_type = $this.attr("class").split(" ")[0];
 
-                    /* address filtering for ethnicity in fatal incidents */
-                    // if (filter_id === "fatal"){
-                    //     var active;
-                    //     $("div.person_ethnicity.invisible").removeClass("invisible");
-                    //     if($("input:radio[name='person_ethnicity']").is(":checked")) {
-                    //         active = $("input:radio[name='person_ethnicity']").attr("id");
-                    //     } else {
-                    //         active = null;
-                    //     };
-                    // } else if (filter_id === "nonfatal_calc"){
-                    //     $("div.person_ethnicity").addClass("invisible");
-                    // };
+                    // $this.parent().css("background", "#203047");
 
-                    filters[filter_type].push(filter_id)
+                    if (filter_id === "fatal"){
+                        $("label.display-until-toggle").addClass("invisible");
+                        $("span.hidden-until-toggle").removeClass("invisible");
+                        filters[filter_type].push(filter_id);
+                    } else if (filter_id === "nonfatal_calc"){
+                        $("span.hidden-until-toggle").addClass("invisible");
+                        $("label.display-until-toggle").removeClass("invisible");
+                        $("input:radio[name='person_ethnicity']").attr("checked", false);
+                        filters[filter_type].push("no_ethnicity");
+                        filters[filter_type].push(filter_id);
+                    } else {
+                        filters[filter_type].push(filter_id);
+                    };
                 };
             });
             $("input:checkbox").each(function(){
